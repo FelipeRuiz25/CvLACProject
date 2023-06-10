@@ -1,0 +1,75 @@
+/* Estilos del contenedor del header */
+.header_container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin: 0;
+    background: radial-gradient(circle at 50% 50%, #6771cb 20%, #000000 100%);
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+  
+  /* Estilos del título del header */
+  .title_header {
+    margin: 0;
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 3.5rem;
+    color: #ffffff;
+    width: 50%;
+  }
+  
+  .menu_header{
+    margin-top: 5%;
+    width: 50%;
+    margin-right: auto;
+  }
+  
+  .row_header {
+    display: flex;
+    list-style: none;
+    width: 100%;
+  }
+  
+  .column_header {
+    margin-right: 5%;
+  }
+  
+  .column_header a {
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    text-decoration-line: underline;
+    color: #ffffff;
+  }
+  
+  /* Estilos adicionales para dispositivos móviles */
+  @media (max-width: 768px) {
+    .title_header {
+      font-size: 2rem;
+      text-align: center;
+      width: 100%;
+    }
+  
+    .menu_header {
+      width: 100%;
+      margin-right: 0;
+    }
+  
+    .row_header {
+      justify-content: center;
+    }
+  
+    .column_header {
+      text-align: center;
+    }
+  
+    .column_header a {
+      font-size: 1rem;
+      padding-left: 5px;
+    }
+  }
+  

@@ -1,0 +1,49 @@
+.subtitle {
+    margin: 0;
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 3.0rem;
+    color: #000;
+    padding-left: 15px;
+}
+
+.search_instruction {
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.8rem;
+    color: #000;
+    text-align: center;
+    margin-top: 15px;
+}
+
+hr {
+    height: 1px;
+    border-width: 0;
+    background-color: black;
+    width: 60%;
+    margin-top: 25px;
+}
+
+.main_nav_search{
+    width: 100%;
+    margin-top: 25px;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+}
+  
+  @media (max-width: 768px) {
+    .subtitle {
+        font-size: 2rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    .search_instruction {
+        font-size: 1.5rem;
+        text-align: center;
+        width: 100%;
+    }
+}

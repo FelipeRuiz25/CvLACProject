@@ -1,0 +1,59 @@
+.search_bar_container {
+    width: 130%;
+    height: 60px;
+    background: #F9F9F9;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    margin-left: -15%;
+  }
+  
+  .search_bar_container input {
+    width: 75%;
+    height: 100%;
+    border: none;
+    border-radius: 20px;
+    background-color: transparent;
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 2.0rem;
+    color: #000000;
+    text-align: center;
+    float: left;
+  }
+  
+  .search_bar_container input:focus {
+    outline: none; /* Elimina el contorno predeterminado al hacer foco */
+  }
+  
+  .search_bar_container button {
+    width: 20%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    float: right;
+  }
+
+  .search_bar_container img {
+    border: none;
+    width: 30%;
+    background: transparent;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .search_bar_container {
+      width: 60%;
+      height: 40px;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+    
+    .search_bar_container input {
+      width: 50%;
+    }
+    
+    .search_bar_container button {
+      width: 30%;
+    }
+  }
