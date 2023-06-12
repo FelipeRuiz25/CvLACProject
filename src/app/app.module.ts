@@ -4,14 +4,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
-import { HeaderComponent } from './components/header/header.component';
+import { HeaderComponent } from './header/header.component';
+import { InvestigatorCvComponent } from './pages/investigator-cv/investigator-cv.component';
+import { ArticleTableComponent } from './components/article-table/article-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    InvestigatorCvComponent,
+    ArticleTableComponent
   ],
   imports: [
     BrowserModule,
@@ -20,4 +24,7 @@ import { HeaderComponent } from './components/header/header.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  header_titles = ["Inicio", "Conocer Sistema", "Graficos"]
+
+}

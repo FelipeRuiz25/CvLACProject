@@ -7,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent {
 
-  header_titles = ["Inicio", "Conocer Sistema", "Graficos"]
-
-  constructor() { }
+ constructor() { }
 
 }
