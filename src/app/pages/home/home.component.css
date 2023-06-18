@@ -26,13 +26,7 @@ hr {
     margin-top: 25px;
 }
 
-.main_nav_search{
-    width: 100%;
-    margin-top: 25px;
-    display: flex;  
-    justify-content: center;
-    align-items: center;
-}
+
   
   @media (max-width: 768px) {
     .subtitle {

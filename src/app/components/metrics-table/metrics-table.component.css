@@ -1,0 +1,17 @@
+.main_container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.container{
+  width: 70%;
+  height: 400px;
+  background: #EEF0FE;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 30px;
+  overflow-y: auto;
+  margin-bottom: 100px;
+  grid-template-columns: repeat(3, 1fr);
+
+}

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AppModule } from 'src/app/app.module';
 
 @Component({
   selector: 'app-investigator-cv',
@@ -16,9 +17,9 @@ export class InvestigatorCvComponent implements OnInit {
   };
 
 
-  constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

@@ -16,7 +16,7 @@ h2.subtitle{
     font-size: 2.2rem;
 }
 
-h3.subtitle{
-    text-align: center;
-    font-size: 2.3rem;
+.container_table{
+    width: 100%;
 }
+

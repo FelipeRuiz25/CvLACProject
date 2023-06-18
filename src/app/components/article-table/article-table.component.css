@@ -28,10 +28,6 @@
   border-bottom: 2px solid black;
 }
 
-
-
-
-
 .box_elements{
   margin: 0;
   font-family: "Inter";
@@ -51,9 +47,37 @@
   color: #000000;
 }
 
+button{
+  background-color: transparent;
+  border: none;
+}
 
 
+img {
+  width: 50%;
+
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    overflow: auto;
+  }
+
+  .table_header,
+  .box_elements {
+    font-size: 0.8rem;
+  }
 
 
+  hr{
+    width: 100%;
+  }
 
+}
 
+@media (max-width:1000px) {
+    img {
+      width: 50px;
+  }
+}
