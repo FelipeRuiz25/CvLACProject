@@ -1,5 +1,27 @@
-
-<h1 class="subtitle" *ngIf="example_investigator != undefined">{{example_investigator['full_name']}}</h1>
+<h1 class="subtitle" *ngIf="investigator != undefined">
+  {{investigator.Nombre}}
+</h1>
+<h2 class="subtitle">Información Información Básica</h2>
+<div class="main_container_info">
+  <div class="info_container" *ngIf="investigator != undefined">
+    <div class="item">
+      <h4 class="subtitle">Nombre Completo : </h4>
+      <h5 class="subtitle">{{investigator.Nombre}}</h5>
+    </div>
+    <div class="item">
+      <h4 class="subtitle">Id : </h4>
+      <h5 class="subtitle">{{investigator_id}}</h5>
+    </div>
+    <div class="item">
+      <h4 class="subtitle">Categoría: </h4>
+      <h5 class="subtitle">{{investigator.Categoria}}</h5>
+    </div>
+    <div class="item">
+      <h4 class="subtitle">Número de articulos: </h4>
+      <h5 class="subtitle">{{investigator.number_articles}}</h5>
+    </div>
+  </div>
+</div>
 <h2 class="subtitle">Información Investigativa</h2>
 <h3 class="subtitle">Artículos</h3>
-<app-article-table></app-article-table>
+<app-article-table [author_info]="investigator" *ngIf="isLoaded"></app-article-table>

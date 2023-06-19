@@ -13,10 +13,10 @@ export class ArticleMetricsComponent implements OnInit {
     number_projects: 0,
     category: "Junior"
   };
+  
+  list_articles = []
 
   @Input() article_name!:string
-
-  
 
   constructor() { }
 

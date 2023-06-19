@@ -21,6 +21,7 @@ export class SearchBarComponent implements OnInit {
   private url_get_authors = "https://cvlacapi.onrender.com/authors/name/"; 
   isClicked = false
 
+  url_aux = "http://localhost:4200/cvview/"
 
   constructor(private dataManagerService:DataManagerService) {
   }
@@ -36,7 +37,7 @@ export class SearchBarComponent implements OnInit {
 
 
   redirectToCv(id_investigator:string): void {
-    const url = "https://cvlacapi.onrender.com//articles/" + id_investigator;
+    const url = this.url_aux + id_investigator;
     window.location.href = url;
   }
 

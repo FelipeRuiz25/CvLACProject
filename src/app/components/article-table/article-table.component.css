@@ -3,8 +3,9 @@
   display: flex;
   justify-content: center;
 }
+
 .container{
-  width: 80%;
+  width: 70%;
   height: 400px;
   background: #EEF0FE;
   border: 2px solid #000000;
@@ -18,7 +19,7 @@
   width: 100%;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 columnas con el mismo ancho */
+  grid-template-columns: repeat(4, 1fr); /* 5 columnas con el mismo ancho */
   gap: 10px;
   grid-auto-rows: auto;
   text-align: center;

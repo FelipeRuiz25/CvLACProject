@@ -6,7 +6,7 @@ import { ArticleMetricsComponent } from './pages/article-metrics/article-metrics
 
 const routes: Routes = [
   { path : 'home', component : HomeComponent},
-  { path : 'cvview', component : InvestigatorCvComponent},
+  { path : 'cvview/:id', component : InvestigatorCvComponent},
   { path : 'article_metrics', component : ArticleMetricsComponent}
   
 ];

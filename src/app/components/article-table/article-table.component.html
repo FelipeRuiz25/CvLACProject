@@ -1,18 +1,16 @@
-<div class="main_container">
+<div class="main_container" *ngIf="isLoaded">
     <div class="container">
         <div class="box">
             <h1 class="table_header">Nombre</h1>
             <h1 class="table_header">Autor</h1>
-            <h1 class="table_header">Identificador</h1>
             <h1 class="table_header">Doi</h1>
             <h1 class="table_header">Metrícas</h1>
         </div>
-        <div *ngFor="let article of articles"  >
+        <div *ngFor="let article of list_articles"  >
             <div class="box">
-                <h2 class="box_elements">{{ article.getName() }}</h2>
-                <h2 class="box_elements">{{ article.getAuthors() }}</h2>
-                <h2 class="box_elements">{{ article.getId() }}</h2>
-                <h2 class="box_elements">{{ article.getDoi() }}</h2>    
+                <h2 class="box_elements">{{ article.nombre_articulo }}</h2>
+                <h2 class="box_elements">{{ article.autores }}</h2>
+                <h2 class="box_elements">{{ article.doi}}</h2>    
                 <button type="image"><img src="./assets/cube.png"></button>           
         </div>
     </div>
