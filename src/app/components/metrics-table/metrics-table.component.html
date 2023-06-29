@@ -1,54 +1,67 @@
 <div class="main_container">
   <div class="container">
     <div class="element_table">
-      <h1 class="text_table">Title</h1>
+      <h1 class="text_table">Titulo: </h1>
+      <h1 class="text_table">{{ article_data['Nombre'] }}</h1>
     </div>
-    <div class="element_table">
-      <h1 class="text_table">Date</h1>
-    </div>
-
-    <div class="element_table">
-      <h1 class="text_table">Identifier</h1>
-    </div>
-
-    <div class="element_table">
-      <h1 class="text_table">Keywords</h1>
+    <div class="element_table" [ngSwitch]="isContented(article_data['anio'])">
+      <h1 class="text_table">Fecha Publicación: </h1>
+      <img *ngSwitchCase="true" class="icon" src="./assets/unchecked.png" >
+      <img *ngSwitchCase="false" class="icon" src="./assets/checked.png">
     </div>
 
-    <div class="element_table">
-      <h1 class="text_table">Relation</h1>
+    <div class="element_table" [ngSwitch]="isContented(article_data['doi'])">
+      <h1 class="text_table">Doi: </h1>
+      <img *ngSwitchCase="true" class="icon" src="./assets/unchecked.png">
+      <img *ngSwitchCase="false" class="icon" src="./assets/checked.png">
     </div>
 
-    <div class="element_table">
-      <h1 class="text_table">Description</h1>
+    <div class="element_table" [ngSwitch]="isContented(article_data['palabras_claves'])">
+      <h1 class="text_table">Palabras Clave: </h1>
+      <img *ngSwitchCase="true" class="icon" src="./assets/unchecked.png">
+      <img *ngSwitchCase="false" class="icon" src="./assets/checked.png">
     </div>
 
-    <div class="element_table">
-      <h1 class="text_table">Author</h1>
+    <div class="element_table" [ngSwitch]="isContented(article_data['ISSN'])">
+      <h1 class="text_table">Issn ID: </h1>
+      <img *ngSwitchCase="true" class="icon" src="./assets/unchecked.png">
+      <img *ngSwitchCase="false" class="icon" src="./assets/checked.png">
     </div>
 
-    <div class="element_table">
-      <h1 class="text_table">Rights</h1>
+    <div class="element_table" [ngSwitch]="isContented(article_data['volumen'])">
+      <h1 class="text_table">Volumen: </h1>
+      <img *ngSwitchCase="true" class="icon" src="./assets/unchecked.png">
+      <img *ngSwitchCase="false" class="icon" src="./assets/checked.png">
     </div>
 
-    <div class="element_table">
-      <h1 class="text_table">Language</h1>
+    <div class="element_table" [ngSwitch]="isContented(article_data['autores'])">
+      <h1 class="text_table">Autores: </h1>
+      <img *ngSwitchCase="true" class="icon" src="./assets/unchecked.png">
+      <img *ngSwitchCase="false" class="icon" src="./assets/checked.png">
     </div>
 
-    <div class="element_table">
-      <h1 class="text_table">Other Contributors</h1>
+    <div class="element_table" [ngSwitch]="isContented(article_data['tipo_articulo'])">
+      <h1 class="text_table">Tipo Articulo: </h1>
+      <img *ngSwitchCase="true" class="icon" src="./assets/unchecked.png">
+      <img *ngSwitchCase="false" class="icon" src="./assets/checked.png">
     </div>
 
-    <div class="element_table">
-      <h1 class="text_table">Editor</h1>
+    <div class="element_table" [ngSwitch]="isContented(article_data['nombre_revista'])">
+      <h1 class="text_table">Revista editorial: </h1>
+      <img *ngSwitchCase="true" class="icon" src="./assets/unchecked.png">
+      <img *ngSwitchCase="false" class="icon" src="./assets/checked.png">
     </div>
 
-    <div class="element_table">
-      <h1 class="text_table">Resource Type</h1>
+    <div class="element_table" [ngSwitch]="article_data['marca_verificacion']">
+      <h1 class="text_table">Marca Verificación: </h1>
+      <img *ngSwitchCase="false" class="icon" src="./assets/unchecked.png">
+      <img *ngSwitchCase="true" class="icon" src="./assets/checked.png">
     </div>
 
-    <div class="element_table">
-      <h1 class="text_table">Source</h1>
+    <div class="element_table"  [ngSwitch]="article_data['paginacion']">
+      <h1 class="text_table">Paginación: </h1>
+      <img *ngSwitchCase="false" class="icon" src="./assets/unchecked.png">
+      <img *ngSwitchCase="true" class="icon" src="./assets/checked.png">
     </div>
   </div>
 </div>

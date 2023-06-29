@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchBarComponent } from 'src/app/components/search-bar/search-bar.component';
 import { CvInvestigators } from 'src/app/data_managment/cv-investigators';
-import { DataManagerService } from 'src/app/data_managment/data-manager.service';
 
 @Component({
   selector: 'app-home',
@@ -22,16 +21,12 @@ export class HomeComponent implements OnInit{
 
  app_search_bar = SearchBarComponent
 
- constructor(private dataManagerService:DataManagerService) {
+ constructor() {
  }
 
 
   ngOnInit(): void {
-    /*this.dataManagerService.getAuthorsByName().subscribe(list_authors => {
-      this.list_authors = list_authors;
-      console.log(list_authors)
-      this.isLoaded = true;
-    });*/
+
   }
 
 }

@@ -11,7 +11,7 @@
                 <h2 class="box_elements">{{ article.nombre_articulo }}</h2>
                 <h2 class="box_elements">{{ article.autores }}</h2>
                 <h2 class="box_elements">{{ article.doi}}</h2>    
-                <button type="image"><img src="./assets/cube.png"></button>           
+                <button type="image" (click)="redirectToArticleData(article.index)"><img src="./assets/cube.png"></button>           
         </div>
     </div>
 </div>

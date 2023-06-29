@@ -12,6 +12,8 @@ import { MetricsTableComponent } from './components/metrics-table/metrics-table.
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { StatsComponent } from './pages/stats/stats.component';
+import { ChartModule } from 'primeng/chart.js';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { FormsModule } from '@angular/forms';
     InvestigatorCvComponent,
     ArticleTableComponent,
     ArticleMetricsComponent,
-    MetricsTableComponent
+    MetricsTableComponent,
+    StatsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

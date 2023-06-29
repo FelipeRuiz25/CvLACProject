@@ -2,16 +2,44 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-top: 90px;
 }
 .container{
-  width: 70%;
-  height: 400px;
+  width: 90%;
+  height: 600px;
   background: #EEF0FE;
-  border: 2px solid #000000;
   box-sizing: border-box;
   border-radius: 30px;
   overflow-y: auto;
   margin-bottom: 100px;
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
+  
+}
 
+.element_table{
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #000000;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+
+.icon{
+  width: 20%;
+}
+
+img{
+  width: 30%;
+  float: right;
+}
+
+.text_table{
+  float: left;
+  width: 70%;
 }

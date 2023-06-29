@@ -14,6 +14,7 @@ export class ArticleTableComponent implements OnInit{
 
 
  @Input() author_info!:Investigator_Cv
+ @Input() url_body!:string
 
  isLoaded = false
  
@@ -28,6 +29,12 @@ export class ArticleTableComponent implements OnInit{
     console.log(this.author_info)
     this.list_articles = this.author_info.Articulos
     this.isLoaded = true
+  }
+
+  redirectToArticleData(article_index:number): void {
+    this.url_body = this.url_body.replace('cvview', 'article_metrics');
+    const url = this.url_body + "/" + article_index;
+    window.location.href = url;
   }
 
 
