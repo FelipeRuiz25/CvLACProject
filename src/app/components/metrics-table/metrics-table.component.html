@@ -1,9 +1,5 @@
 <div class="main_container">
   <div class="container">
-    <div class="element_table">
-      <h1 class="text_table">Titulo: </h1>
-      <h1 class="text_table">{{ article_data['Nombre'] }}</h1>
-    </div>
     <div class="element_table" [ngSwitch]="isContented(article_data['anio'])">
       <h1 class="text_table">Fecha Publicación: </h1>
       <img *ngSwitchCase="true" class="icon" src="./assets/unchecked.png" >
@@ -61,7 +57,16 @@
     <div class="element_table"  [ngSwitch]="article_data['paginacion']">
       <h1 class="text_table">Paginación: </h1>
       <img *ngSwitchCase="false" class="icon" src="./assets/unchecked.png">
-      <img *ngSwitchCase="true" class="icon" src="./assets/checked.png">
+      <img *ngSwitchCase="true" class="icon" src="./assets/checked.png" >
     </div>
   </div>
+</div>
+<div class="sub_main_container">
+  <div class="info_container">
+    <h1>
+      Del articulo {{ article_data['Nombre'] }} se obtuvo que contiene {{this.get_percent_completed()}} % de los 
+      metadatos evaluados sobre el estandar evaludado Dublin Core.
+    </h1>
+  </div>
+  
 </div>

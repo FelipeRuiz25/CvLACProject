@@ -6,11 +6,13 @@ import { ChartModule } from 'primeng/chart';
   templateUrl: './stats.component.html',
   styleUrls: ['./stats.component.css']
 })
-export class StatsComponent implements OnInit {
+export class StatsComponent {
 
-  constructor() { }
 
-  ngOnInit(): void {
-  }
+total_articles = 10
+id_most_used = "ORCID"
+id_most_used_count = 153
+top_metadata_used = ["ISSN","Author" , "Revista editorial"]
+less_metadata_used = ["Volumen","Tipo Artículo" , "Marca de Validación"]
 
 }

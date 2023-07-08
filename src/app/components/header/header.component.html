@@ -5,13 +5,13 @@
           <div class="collapse navbar-collapse" >
             <ul class="row_header">
               <li class="column_header">
-                <a href="#" *ngIf="header_titles != undefined ">{{header_titles[0]}}</a>
+                <a href="#" *ngIf="header_titles != undefined " [routerLink]="this.home_path">{{header_titles[0]}}</a>
               </li>
               <li class="column_header">
-                <a href="#" *ngIf="header_titles != undefined ">{{header_titles[1]}}</a>
+                <a href="#" *ngIf="header_titles != undefined " [routerLink]="this.about_path">{{header_titles[1]}}</a>
               </li>
               <li class="column_header">
-                <a href="#" *ngIf="header_titles != undefined ">{{header_titles[2]}}</a>
+                <a href="#" *ngIf="header_titles != undefined " [routerLink]="this.stats_path">{{header_titles[2]}}</a>
               </li>
             </ul>
           </div>

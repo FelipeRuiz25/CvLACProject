@@ -11,6 +11,10 @@ export class HeaderComponent implements OnInit {
 
   @Input() header_titles?: string[];
 
+  home_path = "home"
+  stats_path = "stats"
+  about_path = "about"
+
 
 
 

@@ -1,5 +1,5 @@
 export class Articulo_Data {
-    
+    "nombre_articulo":string;
     "Nombre":string;
     "index":number
     "anio": string;
@@ -15,6 +15,7 @@ export class Articulo_Data {
     
   
     constructor(
+      nombre_articulo:string,
       Nombre:string,
       index:number,
       anio: string,
@@ -28,7 +29,7 @@ export class Articulo_Data {
       marca_verificacion: boolean,
       paginacion: boolean,
     ) {
-
+      this.nombre_articulo = nombre_articulo
       this.Nombre = Nombre;
       this.index = index;
       this.anio = anio;

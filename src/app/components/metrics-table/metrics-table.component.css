@@ -11,7 +11,7 @@
   box-sizing: border-box;
   border-radius: 30px;
   overflow-y: auto;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   
@@ -42,4 +42,24 @@ img{
 .text_table{
   float: left;
   width: 70%;
+}
+
+.sub_main_container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.info_container{
+  width: 80%;
+  font-family: "Inter";
+  font-size: 1.2rem;
+  color: #000000;
+  text-align: center;
+  text-align: justify;
+}
+
+h1{
+  font-weight: 200;
 }
