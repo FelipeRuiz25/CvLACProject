@@ -5,19 +5,57 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { HeaderComponent } from './components/header/header.component';
+import { InvestigatorCvComponent } from './pages/investigator-cv/investigator-cv.component';
+import { ArticleTableComponent } from './components/article-table/article-table.component';
+import { ArticleMetricsComponent } from './pages/article-metrics/article-metrics.component';
+import { MetricsTableComponent } from './components/metrics-table/metrics-table.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { StatsComponent } from './pages/stats/stats.component';
+import { ChartModule } from 'primeng/chart';
+import { CountriesChartComponent } from './components/reports/countries-chart/countries-chart.component';
+import { InternationalIdChartComponent } from './components/reports/international-id-chart/international-id-chart.component';
+import { RadarArticleChartComponent } from './components/reports/radar-article-chart/radar-article-chart.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    InvestigatorCvComponent,
+    ArticleTableComponent,
+    ArticleMetricsComponent,
+    MetricsTableComponent,
+    StatsComponent,
+    CountriesChartComponent,
+    InternationalIdChartComponent,
+    RadarArticleChartComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ChartModule,
+    CarouselModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+  header_titles = ["Inicio", "Conocer Sistema", "Graficos"]
+
+
+
+
+
+}

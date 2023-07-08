@@ -1,0 +1,79 @@
+.chart_title {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 2rem;
+  color: #000;
+  text-align: center;
+}
+
+.header_title{
+  margin: 0;
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 3rem;
+  color: #000;
+  text-align: left;
+}
+
+.main_container {
+  width: 90%;
+  
+}
+
+.info_container{
+  float: left;
+  width: 50%;
+}
+
+.info_container_radar{
+  float: left;
+  width: 50%;
+  margin-right: 0;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.chart_container{
+  display: flex;
+  width: 100%;
+}
+
+
+.title_chart_radar{
+  float: left;
+  width: 40%;
+  margin: 0;
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: #000;
+  text-align: justify;
+  line-height: 35px;
+  padding-left: -25px;
+}
+
+.title_chart{
+  float: left;
+  width: 40%;
+  margin: 0;
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: #000;
+  text-align: justify;
+  padding-left: 30px;
+  line-height: 35px;
+
+}
+
+

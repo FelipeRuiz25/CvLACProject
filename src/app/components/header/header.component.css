@@ -1,11 +1,12 @@
 /* Estilos del contenedor del header */
 .header_container {
-    width: 100%;
+    width: auto;
     height: auto;
     display: flex;
     margin: 0;
+    flex-basis: 100%;
     background: radial-gradient(circle at 50% 50%, #6771cb 20%, #000000 100%);
-    padding: 20px;
+    padding-left: 20px;
     flex-wrap: wrap;
   }
   

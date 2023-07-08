@@ -1,0 +1,24 @@
+.subtitle {
+    margin-top: 20px;
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 400;    
+    color: #000;
+    padding-left: 15px;
+}
+
+h1.subtitle{
+    text-align: center;
+    font-size: 3.0rem;
+}
+
+h2.subtitle{
+    font-size: 2.2rem;
+    width: 80%;
+    margin-left: 15px;
+}
+
+.container_table{
+    width: 100%;
+}
+

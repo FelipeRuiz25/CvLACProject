@@ -1,0 +1,65 @@
+.main_container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 90px;
+}
+.container{
+  width: 90%;
+  height: 600px;
+  background: #EEF0FE;
+  box-sizing: border-box;
+  border-radius: 30px;
+  overflow-y: auto;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  
+}
+
+.element_table{
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #000000;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+
+.icon{
+  width: 20%;
+}
+
+img{
+  width: 30%;
+  float: right;
+}
+
+.text_table{
+  float: left;
+  width: 70%;
+}
+
+.sub_main_container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.info_container{
+  width: 80%;
+  font-family: "Inter";
+  font-size: 1.2rem;
+  color: #000000;
+  text-align: center;
+  text-align: justify;
+}
+
+h1{
+  font-weight: 200;
+}

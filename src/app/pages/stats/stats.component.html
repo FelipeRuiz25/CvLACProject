@@ -1,0 +1,68 @@
+<h1 class="header_title">Reportes Gráficos</h1>
+
+<div class="container">
+  <div class="main_container">
+
+
+    <h1 class="chart_title">
+      Número de artículos registrados por Base de datos Científica
+    </h1>
+    <div class="chart_container">
+      <div class="info_container">
+        <app-international-id-chart></app-international-id-chart>
+      </div>
+      <h1 class="title_chart">
+        En el análisis de un conjunto de artículos, se descubrió que el
+        identificador más utilizado por los investigadores en sus publicaciones
+        científicas es {{ this.id_most_used }}, con un total de
+        {{ this.id_most_used_count }} usos. Este hallazgo proporciona
+        información valiosa sobre las preferencias y tendencias en la comunidad
+        científica en cuanto a los identificadores utilizados. Comprender el
+        identificador más popular ayuda a comprender las prácticas de
+        identificación y colaboración en la investigación científica, lo cual es
+        relevante para instituciones académicas y editores. Esta información
+        permite adaptar servicios y políticas para satisfacer las necesidades de
+        los investigadores en términos de identificación y reconocimiento.
+      </h1>
+    </div>
+
+    <h1 class="chart_title">
+      Número de artículos registrados por Base de datos Científica por país
+    </h1>
+    <div class="chart_container">
+      <div class="info_container">
+        <app-countries-chart></app-countries-chart>
+      </div>
+      <h1 class="title_chart">
+        Con la información recolectada a nivel de países, pudimos identificar
+        que {{ this.id_most_used }} sigue siendo la base de datos internacional
+        de preferencia para los investigadores de los países registrados en
+        CvLAC. Esto indica que este identificador se mantiene como el estándar
+        predominante en la comunidad científica en términos de identificación y
+        reconocimiento.
+      </h1>
+    </div>
+
+    <h1 class="chart_title">
+      Número de metadatos registrados por artículo
+    </h1>
+
+    <div class="chart_container">
+      <div class="info_container_radar">
+        <app-radar-article-chart></app-radar-article-chart>
+      </div>
+      <h1 class="title_chart_radar">
+        Se logran identificar los metadatos más utilizados, los cuales son:
+        {{ this.top_metadata_used[0] }}, {{ this.top_metadata_used[1] }},
+        {{ this.top_metadata_used[2] }}. Estos metadatos son los principales a
+        tener en cuenta al realizar acciones sobre los artículos, como la
+        extracción de información, ya que ayudan a identificar la mayoría de los
+        artículos de manera más sencilla. Por otro lado, tenemos los metadatos
+        menos utilizados, que son: {{ this.less_metadata_used[0] }},
+        {{ this.less_metadata_used[1] }}, {{ this.less_metadata_used[2] }}.
+        Estos metadatos deberían ser menos considerados si queremos obtener una
+        identificación general de los datos.
+      </h1>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<h1 class="subtitle">Evaluación Métricas según Dublin Core</h1>
+<br>
+<h2 class="subtitle" *ngIf="isLoaded">Nombre Artículo :  {{article_name}}</h2>
+<app-metrics-table [article_data]="article_data"  *ngIf="isLoaded"></app-metrics-table>
+
