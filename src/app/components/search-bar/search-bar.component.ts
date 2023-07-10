@@ -21,7 +21,6 @@ export class SearchBarComponent implements OnInit {
   private url_get_authors = "https://cvlacapi.onrender.com/authors/name/"; 
   isClicked = false;
 
-  url_aux = window.location.href;
 
   constructor(private dataManagerService:DataManagerService) {
   }
@@ -37,7 +36,8 @@ export class SearchBarComponent implements OnInit {
 
 
   redirectToCv(id_investigator:string): void {
-    const url = this.url_aux.replace("/home", "/cview"); + id_investigator;
+    console.log(id_investigator)
+    const url = window.location.href.replace("/home", "/cvview/") + id_investigator;
     window.location.href = url;
   }
 
