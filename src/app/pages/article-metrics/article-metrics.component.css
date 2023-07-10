@@ -22,3 +22,26 @@ h2.subtitle{
     width: 100%;
 }
 
+@media (max-width: 768px) {
+    .subtitle {
+      margin-top: 10px;
+      font-size: 1.5rem;
+      padding-left: 10px;
+    }
+    
+    h1.subtitle {
+      text-align: center;
+      font-size: 2rem;
+    }
+    
+    h2.subtitle {
+      font-size: 1.5rem;
+      width: 90%;
+      margin-left: 10px;
+    }
+    
+    .container_table {
+      width: 100%;
+    }
+  }
+  

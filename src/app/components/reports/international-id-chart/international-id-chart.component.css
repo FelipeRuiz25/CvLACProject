@@ -22,3 +22,15 @@
     text-align: center;
   }
   
+
+  @media (max-width: 768px) {
+    
+    .chart_container {
+      margin-top: 50px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 50px;
+
+    }
+  
+  }
