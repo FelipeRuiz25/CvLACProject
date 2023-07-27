@@ -13,28 +13,81 @@ export class ArticleMetricsComponent implements OnInit {
   private url_get_authors_articles = "https://cvlacapi.onrender.com//articles/"; // URL buscar autores
   private investigator_id = this.route.snapshot.params['id']
   private article_index = this.route.snapshot.params['article_index']
+  
   article_data!:any
   article_name!:string
-  
- isLoaded = false
+  isLoaded = false
+
+  percent_metadata!:number
+  data!:any
 
  
   
 
-  constructor(private dataManagerService:DataManagerService,private route: ActivatedRoute) { }
+  constructor(private dataManagerService:DataManagerService,private route: ActivatedRoute) {
+    
+   }
 
   ngOnInit(): void {
-    console.log(this.investigator_id + "  -   " + this.article_index)
       this.dataManagerService.getArticlesData(this.url_get_authors_articles + this.investigator_id + "/" + this.article_index)
       .subscribe(article => {
         this.article_data = article;
         let list = this.article_data['Articulos']
         let data = list[0]
+        this.set_article_info(article)
         this.article_name = data['nombre_articulo']
-      this.isLoaded = true
+        this.isLoaded = true
+        this.get_percent_completed()
     });
+    if(this.isLoaded){
+      this.get_percent_completed()
+    }
+    
   }
 
+  
 
+  /**
+   * Obtiene el objeto de la API y los convierte en un objeto Article_Data para facilitar leer sus propiedades
+   */
+  set_article_info(article:any){
+    let list = this.article_data['Articulos']
+    this.data = list[0]
+    this.article_data = new Articulo_Data(
+      this.data['nombre_articulo'],
+      this.data['index'],
+      this.data['anio'],
+      this.data['doi'],
+      this.data['palabras_claves'],
+      this.data['issn_revista'],
+      this.data['volumen'],
+      this.data['autores'],
+      this.data['tipo_articulo'],
+      this.data['editorial_revista'],
+      this.data['marca_verificacion'],
+      this.verify_pagination(this.data['marca_verificacion'],this.data['marca_verificacion'])
+      )
 
+  }
+
+  /**
+   * Verifica que haya una pagina de incio y de fina, depnde de esto retirna true si registra ambas o false de lo contrario
+   * @param pagina_inicio 
+   * @param pagina_final 
+   * @returns 
+   */
+  verify_pagination(pagina_inicio: string, pagina_final: string): boolean {
+    if (pagina_inicio === undefined || pagina_final === undefined) {
+      return false
+    }
+    return true;
+  }
+
+  
+
+  /** Obtiene el total de metadatos registrados en el sistema como porcentage*/
+  get_percent_completed():void{
+    console.log("Total de datos: " + (this.article_data.get_metadata_true() + this.article_data.get_metadata_false()))
+    this.percent_metadata = (this.article_data.get_metadata_true() )/(this.article_data.get_metadata_true() +this.article_data.get_metadata_false() ) * 100
+}
 }

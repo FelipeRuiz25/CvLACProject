@@ -41,7 +41,7 @@
 }
 
 
-.chart_container{
+.chart_container2{
   display: flex;
   width: 100%;
 }
@@ -115,7 +115,7 @@
     align-items: center;
   }
   
-  .chart_container {
+  .chart_container2 {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
