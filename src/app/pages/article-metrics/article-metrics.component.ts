@@ -24,18 +24,16 @@ export class ArticleMetricsComponent implements OnInit {
  
   
 
-  constructor(private dataManagerService:DataManagerService,private route: ActivatedRoute) {
-    
-   }
+  constructor(private dataManagerService:DataManagerService,private route: ActivatedRoute) {}
+
 
   ngOnInit(): void {
       this.dataManagerService.getArticlesData(this.url_get_authors_articles + this.investigator_id + "/" + this.article_index)
       .subscribe(article => {
-        this.article_data = article;
-        let list = this.article_data['Articulos']
-        let data = list[0]
-        this.set_article_info(article)
-        this.article_name = data['nombre_articulo']
+        this.data = article;  
+        console.log(article)
+        this.set_article_info()
+        this.article_name = this.article_data['nombre_articulo']
         this.isLoaded = true
         this.get_percent_completed()
     });
@@ -50,9 +48,7 @@ export class ArticleMetricsComponent implements OnInit {
   /**
    * Obtiene el objeto de la API y los convierte en un objeto Article_Data para facilitar leer sus propiedades
    */
-  set_article_info(article:any){
-    let list = this.article_data['Articulos']
-    this.data = list[0]
+  set_article_info(){
     this.article_data = new Articulo_Data(
       this.data['nombre_articulo'],
       this.data['index'],
@@ -63,9 +59,13 @@ export class ArticleMetricsComponent implements OnInit {
       this.data['volumen'],
       this.data['autores'],
       this.data['tipo_articulo'],
-      this.data['editorial_revista'],
+      this.data['nombre_revista'],
       this.data['marca_verificacion'],
-      this.verify_pagination(this.data['marca_verificacion'],this.data['marca_verificacion'])
+      this.verify_pagination(this.data['pagina_fin'],this.data['pagina_inicio']),
+      this.data["pais"],
+      this.data["fasciculo"],
+      this.data["valid_doi"],
+      this.data["duplicated"],
       )
 
   }
@@ -87,7 +87,8 @@ export class ArticleMetricsComponent implements OnInit {
 
   /** Obtiene el total de metadatos registrados en el sistema como porcentage*/
   get_percent_completed():void{
-    console.log("Total de datos: " + (this.article_data.get_metadata_true() + this.article_data.get_metadata_false()))
-    this.percent_metadata = (this.article_data.get_metadata_true() )/(this.article_data.get_metadata_true() +this.article_data.get_metadata_false() ) * 100
-}
+    console.log("Datos true: " + this.article_data.get_metadata_true() +"\n Datos False: " + this.article_data.get_metadata_false())
+    this.percent_metadata = this.article_data.get_metadata_true() / (this.article_data.get_metadata_true() + this.article_data.get_metadata_false()) * 100 //Se le resta uno del indice que le pusimos para indentificar 
+    this.percent_metadata = Math.trunc(this.percent_metadata)
+  }
 }

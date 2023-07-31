@@ -9,11 +9,8 @@ import { Articulo_Data } from 'src/app/data_managment/article_data';
 export class MetricsTableComponent implements OnInit {
   
 
-  @Input() article_data!:any
-  data!: any
-
+  @Input() article_data!:Articulo_Data
   @Input() percent_metadata!:number
-
 
   constructor() { }
 
@@ -21,11 +18,13 @@ export class MetricsTableComponent implements OnInit {
   }
 
 
-  isContented(value: any): boolean {
-    if (Array.isArray(value)) {
-      return value.length === 0;
+  isContented(value: any): string {
+    if (value === null || value === undefined || value === '') {
+      return "No registra";
+    }else if(value == true){
+      return "Registra"
     }
-    return value === null || value === undefined || value === ''
+    return value
     }
 
 

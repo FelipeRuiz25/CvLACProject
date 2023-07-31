@@ -19,6 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ChartModule } from 'primeng/chart'; // Importa el módulo ChartModule de primeng
 import { AboutComponent } from './pages/about/about.component';
+import { PuntuationTableComponent } from './components/puntuation-table/puntuation-table.component';
+import { ArticlePuntuationChartComponent } from './components/reports/article-puntuation-chart/article-puntuation-chart.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { AboutComponent } from './pages/about/about.component';
     CountriesChartComponent,
     InternationalIdChartComponent,
     RadarArticleChartComponent,
-    AboutComponent
+    AboutComponent,
+    PuntuationTableComponent,
+    ArticlePuntuationChartComponent
   ],
   imports: [
     BrowserModule,

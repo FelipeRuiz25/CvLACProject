@@ -6,14 +6,12 @@
 }
 .container{
   width: 90%;
-  height: 600px;
-  background: #EEF0FE;
   box-sizing: border-box;
   border-radius: 30px;
-  overflow-y: auto;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 20px;
   
 }
 
@@ -40,6 +38,13 @@ img{
 }
 
 .text_table{
+  float: left;
+  width: 70%;
+  font-weight: 800;
+  font-size: 2.4rem;
+}
+
+.text_table2{
   float: left;
   width: 70%;
 }

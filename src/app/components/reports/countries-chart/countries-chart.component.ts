@@ -19,7 +19,7 @@ export class CountriesChartComponent implements OnInit {
   international_id_by_country_sorted:Country_Report[] = []
   private url_get_countries_report = 'https://cvlacapi.onrender.com//reports/identifiers/by_nation'; // URL reportes por pais
   isLoaded = false;
-  
+
 
 
   constructor(private dataManagerService: DataManagerService) {
