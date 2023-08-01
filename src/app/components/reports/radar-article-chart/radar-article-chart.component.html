@@ -1,8 +1,8 @@
 
-<h1 class="chart_title">
+<h1 class="chart_title" *ngIf="isLoaded">
     Número de metadatos registrados por artículo
 </h1>
-  <div class="chart_container2">
+  <div class="chart_container2" *ngIf="isLoaded">
     <div class="info_container_radar">
         <div class="chart_container">
             <p-chart type="radar" [data]="radarData" [options]="radarOptions"></p-chart>

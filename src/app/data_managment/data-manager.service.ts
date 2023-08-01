@@ -35,6 +35,10 @@ export class DataManagerService {
     return this.http.get<Country_Report>(url);
   }
 
+  public getMetadataReportData(url:string): Observable<Object> {
+    return this.http.get<Object>(url);
+  }
+
 
 
 }

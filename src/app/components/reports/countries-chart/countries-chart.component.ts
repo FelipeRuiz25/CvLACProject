@@ -71,7 +71,6 @@ export class CountriesChartComponent implements OnInit {
       for (let i = 0; i < country_reports.get_list_internationa_id().length; i++) {
         if(country_reports.get_country_name() == country_name_list ){
           if(this.extract_domain_name(country_reports.get_list_internationa_id()[i][0]) == name_id_international){
-            console.log(country_reports.get_list_internationa_id()[i][1]);            
             res = country_reports.get_list_internationa_id()[i][1]
             break;
           }
