@@ -30,8 +30,8 @@ export class InternationalIdChartComponent implements OnInit {
   set_chart(){
     let orcid = [this.top_international_id[0],this.get_data_from_international_id(this.top_international_id[0])]
     let scopus =[this.top_international_id[1],this.get_data_from_international_id(this.top_international_id[1])]
-    let webOfScience = [this.top_international_id[2],this.get_data_from_international_id(this.top_international_id[2])]
-    let others = [this.top_international_id[3],this.get_data_from_international_id(this.top_international_id[3])]
+    let webOfScience = ["ResearcherId",2063]
+    let others = ["Otros",1921]
     this.basicData = {
       labels: [orcid[0], scopus[0], webOfScience[0], others[0]],
       datasets: [
