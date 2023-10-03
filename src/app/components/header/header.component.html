@@ -1,17 +1,20 @@
 <div class="header_container">
-    <h1 class="title_header">Investigation System <br> Comparator</h1>
+    <h1 class="title_header">Investigation <br>System Comparator</h1>
     <nav class="menu_header">
         <div class="container">
-          <div class="collapse navbar-collapse" >
-            <ul class="row_header">
+          <div class="container2" >
+            <!-- ... Otros elementos ... -->
+            <div class="hamburger_menu"><img src="/assets/chart_logo..png"></div>
+
+            <ul class="row_header" style="  list-style-type: none;">
               <li class="column_header">
-                <a href="#" *ngIf="header_titles != undefined " [routerLink]="this.home_path">{{header_titles[0]}}</a>
+                <a href="#" *ngIf="header_titles != undefined "     [routerLink]="this.home_path">{{header_titles[0]}} </a>
               </li>
               <li class="column_header">
-                <a href="#" *ngIf="header_titles != undefined " [routerLink]="this.about_path">{{header_titles[1]}}</a>
+                <a href="#" *ngIf="header_titles != undefined "     [routerLink]="this.about_path">{{header_titles[1]}} </a>
               </li>
               <li class="column_header">
-                <a href="#" *ngIf="header_titles != undefined " [routerLink]="this.stats_path">{{header_titles[2]}}</a>
+                <a href="#" *ngIf="header_titles != undefined "     [routerLink]="this.stats_path">{{header_titles[2]}} </a>
               </li>
             </ul>
           </div>

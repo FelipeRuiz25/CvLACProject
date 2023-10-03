@@ -15,12 +15,20 @@ export class HeaderComponent implements OnInit {
   stats_path = "stats"
   about_path = "about"
 
-
+  
+  
 
 
   ngOnInit(): void {
-
-    // Aquí puedes agregar lógica adicional si es necesario
+    const hamburgerMenu = document.querySelector('.hamburger_menu') as HTMLElement;
+    const container2 = document.querySelector('.container2') as HTMLElement;
+    
+    if (hamburgerMenu) {
+      hamburgerMenu.addEventListener('click', () => {
+        if(container2){
+        container2.style.display = (container2.style.display === 'none' || container2.style.display === '') ? 'flex' : 'none';
+    }});
+    }
   }
 }
 
