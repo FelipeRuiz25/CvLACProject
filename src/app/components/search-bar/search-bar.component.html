@@ -1,8 +1,8 @@
 <div class="main_container">
   <div class="search_bar_container">
-    <input type="text" placeholder="Buscar" [(ngModel)]="name_searched"/>
-    <button type="image"><img src="./assets/search.png" (click)="search()"></button>
+    <input type="text" [(ngModel)]="name_searched"/>
   </div>
+  <span><button type="image" class="button_search"><img src="./assets/searchbaricon.jpg" (click)="search()" ></button></span>
 </div>
 <div class="main_container">
   <div class="main_container2" *ngIf="isClicked" >
