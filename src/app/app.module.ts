@@ -21,6 +21,7 @@ import { ChartModule } from 'primeng/chart'; // Importa el módulo ChartModule d
 import { AboutComponent } from './pages/about/about.component';
 import { PuntuationTableComponent } from './components/puntuation-table/puntuation-table.component';
 import { ArticlePuntuationChartComponent } from './components/reports/article-puntuation-chart/article-puntuation-chart.component';
+import {ButtonModule} from "primeng/button";
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ArticlePuntuationChartComponent } from './components/reports/article-pu
     FormsModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
-    ChartModule
+    ChartModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

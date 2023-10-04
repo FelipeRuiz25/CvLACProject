@@ -1,10 +1,15 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { Subject } from 'rxjs';
 import { AppComponent } from 'src/app/app.component';
+import {ButtonModule} from "primeng/button";
 import { CvInvestigators } from 'src/app/data_managment/cv-investigators';
 import { DataManagerService } from 'src/app/data_managment/data-manager.service';
 import { FormsModule } from '@angular/forms';
+import {HttpParams} from "@angular/common/http";
 
+
+const URL_NAME_SEARCH = "authors/name/"
+const URL_ID_SEARCH = "authors/id"
 
 @Component({
   selector: 'app-search-bar',
@@ -18,7 +23,7 @@ export class SearchBarComponent implements OnInit {
   list_filtered !:CvInvestigators[];
   event!: KeyboardEvent;
   name_searched:string   = ""
-  private url_get_authors = "https://cvlacapi.onrender.com/authors/name/"; 
+  private url_get_authors = "authors/name/";
   isClicked = false;
 
 
@@ -27,11 +32,16 @@ export class SearchBarComponent implements OnInit {
 
 
   search() {
-    this.dataManagerService.getAuthorsByName(this.url_get_authors + this.name_searched.toLowerCase()).subscribe(list_authors => {
-      this.list_authors = list_authors;
-      console.log(list_authors)
-      this.isClicked = true;
-    });
+    let params = new HttpParams()
+      .append('limit', 10);
+    this.dataManagerService
+      .getAuthorsBy(this.url_get_authors + this.name_searched.toLowerCase(), params)
+      .subscribe(result => {
+        this.list_authors = result.authors;
+        console.log(result)
+        this.isClicked = true;
+      }
+    );
   }
 
 
