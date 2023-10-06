@@ -3,12 +3,23 @@
 
     <input type="text" [(ngModel)]="name_searched"/>
   </div>
-  <span><button type="image" class="button_search"><img src="./assets/searchbaricon.jpg" (click)="search()" ></button></span>
+  <span><button type="image" class="button_search"><img src="./assets/searchbaricon.jpg"
+                                                        (click)="onSearch()"></button></span>
+</div>
+<div class="flex align-items-center justify-content-end" *ngIf="isClicked">
+  <span class="mx-1 text-color">Resultados: </span>
+  <p-dropdown [options]="options" optionLabel="label" optionValue="value" [(ngModel)]="limit"
+              (ngModelChange)="onLimitChange()"></p-dropdown>
+  <p-paginator [first]="first" [rows]="limit" [totalRecords]="total_records"
+               (onPageChange)="onPageChange($event)" [showCurrentPageReport]="true"
+               currentPageReportTemplate="{first} - {last} de {totalRecords}" [showPageLinks]="false"
+               [showFirstLastIcon]="true"></p-paginator>
 </div>
 <div class="main_container">
-  <div class="main_container2" *ngIf="isClicked" >
-      <h1 class="element" *ngFor="let author of list_authors" ><a (click)="redirectToCv(author.id_cv)">{{format_text(author.Nombre)}}
-        <br> {{format_text(author.id_cv)}} </a>
-      </h1>
+  <div class="main_container2" *ngIf="isClicked">
+    <h1 class="element" *ngFor="let author of list_authors"><a
+      (click)="redirectToCv(author.id_cv)">{{format_text(author.Nombre)}}
+      <br> {{format_text(author.id_cv)}} </a>
+    </h1>
   </div>
 </div>

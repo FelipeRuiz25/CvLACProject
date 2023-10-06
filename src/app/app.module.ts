@@ -22,6 +22,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { PuntuationTableComponent } from './components/puntuation-table/puntuation-table.component';
 import { ArticlePuntuationChartComponent } from './components/reports/article-puntuation-chart/article-puntuation-chart.component';
 import {ButtonModule} from "primeng/button";
+import {DropdownModule} from "primeng/dropdown";
+import {PaginatorModule} from "primeng/paginator";
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import {ButtonModule} from "primeng/button";
     BrowserAnimationsModule,
     NoopAnimationsModule,
     ChartModule,
-    ButtonModule
+    ButtonModule,
+    DropdownModule,
+    PaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
