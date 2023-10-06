@@ -31,8 +31,11 @@ export class ArticleTableComponent implements OnInit{
     this.isLoaded = true
   }
 
+
+  
+
   redirectToArticleData(article_index:number): void {
-    this.url_body = this.url_body.replace('cvview', 'article_metrics');
+    this.url_body = window.location.href.replace('cvview', 'article_metrics');
     const url = this.url_body + "/" + article_index;
     window.location.href = url;
   }

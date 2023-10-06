@@ -1,3 +1,23 @@
-<div class="chart_container">
-    <p-chart type="radar" [data]="radarData" [options]="radarOptions"></p-chart>
-</div>
+
+<h1 class="chart_title" *ngIf="isLoaded">
+    Número de metadatos registrados por artículo
+</h1>
+  <div class="chart_container2" *ngIf="isLoaded">
+    <div class="info_container_radar">
+        <div class="chart_container">
+            <p-chart type="radar" [data]="radarData" [options]="radarOptions"></p-chart>
+        </div>
+    </div>
+    <h1 class="title_chart_radar">
+      Se logran identificar los metadatos más utilizados, los cuales son:
+      {{ this.top_metadata_used[0] }}, {{ this.top_metadata_used[1] }},
+      {{ this.top_metadata_used[2] }}. Estos metadatos son los principales a
+      tener en cuenta al realizar acciones sobre los artículos, como la
+      extracción de información, ya que ayudan a identificar la mayoría de los
+      artículos de manera más sencilla. Por otro lado, tenemos los metadatos
+      menos utilizados, que son: {{ this.less_metadata_used[0] }},
+      {{ this.less_metadata_used[1] }}, {{ this.less_metadata_used[2] }}.
+      Estos metadatos deberían ser menos considerados si queremos obtener una
+      identificación general de los datos.
+    </h1>
+  </div>

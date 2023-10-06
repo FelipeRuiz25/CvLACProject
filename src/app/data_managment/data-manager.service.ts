@@ -5,6 +5,7 @@ import { CvInvestigators } from "./cv-investigators";
 import { Article_Author } from "./authors-articles";
 import { Investigator_Cv } from "./investigator_cv";
 import { Articulo_Data } from "./article_data";
+import { Country_Report } from "./country_report";
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,14 @@ export class DataManagerService {
 
   public getArticlesData(url:string): Observable<Articulo_Data> {
     return this.http.get<Articulo_Data>(url);
+  }
+
+  public getCountriesReportData(url:string): Observable<Country_Report> {
+    return this.http.get<Country_Report>(url);
+  }
+
+  public getMetadataReportData(url:string): Observable<Object> {
+    return this.http.get<Object>(url);
   }
 
 

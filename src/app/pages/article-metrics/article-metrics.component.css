@@ -6,19 +6,69 @@
     color: #000;
     padding-left: 15px;
 }
+.subtitle2 {
+    margin-top: 20px;
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 400;    
+    color: #000;
+    padding-left: 15px;
+    font-size: 40px;
+    width: 95%;
+    padding-left: 3%;
+}
 
 h1.subtitle{
     text-align: center;
     font-size: 3.0rem;
 }
 
-h2.subtitle{
-    font-size: 2.2rem;
-    width: 80%;
-    margin-left: 15px;
+.article_title{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;    
+    display: flex;
+    font-style: italic;
+    align-items: center;
+}
+.article_content{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 400;    
+    display: flex;
+    align-items: center;
+}
+
+.title_container{
+  display: flex;
+  align-items: center;
+  padding: 0 15%;
 }
 
 .container_table{
     width: 100%;
 }
 
+@media (max-width: 768px) {
+    .subtitle {
+      margin-top: 10px;
+      font-size: 1.5rem;
+      padding-left: 10px;
+    }
+    
+    h1.subtitle {
+      text-align: center;
+      font-size: 2rem;
+    }
+    
+    h2.subtitle {
+      font-size: 1.5rem;
+      width: 90%;
+      margin-left: 10px;
+    }
+    
+    .container_table {
+      width: 100%;
+    }
+  }
+  

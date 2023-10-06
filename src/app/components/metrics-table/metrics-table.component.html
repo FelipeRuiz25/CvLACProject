@@ -1,71 +1,78 @@
 <div class="main_container">
   <div class="container">
-    <div class="element_table" [ngSwitch]="isContented(article_data['anio'])">
+    <div class="element_table">
       <h1 class="text_table">Fecha Publicación: </h1>
-      <img *ngSwitchCase="true" class="icon" src="./assets/unchecked.png" >
-      <img *ngSwitchCase="false" class="icon" src="./assets/checked.png">
+      <h1 class="text_table2">{{this.isContented(article_data['anio'])}} </h1>
     </div>
 
-    <div class="element_table" [ngSwitch]="isContented(article_data['doi'])">
+    <div class="element_table">
       <h1 class="text_table">Doi: </h1>
-      <img *ngSwitchCase="true" class="icon" src="./assets/unchecked.png">
-      <img *ngSwitchCase="false" class="icon" src="./assets/checked.png">
+      <h1 class="text_table2">{{this.isContented(article_data['doi'])}}</h1>
     </div>
 
-    <div class="element_table" [ngSwitch]="isContented(article_data['palabras_claves'])">
+    <div class="element_table" >
       <h1 class="text_table">Palabras Clave: </h1>
-      <img *ngSwitchCase="true" class="icon" src="./assets/unchecked.png">
-      <img *ngSwitchCase="false" class="icon" src="./assets/checked.png">
+      <h1 class="text_table2">{{this.isContented(article_data['palabras_claves'])}}</h1>
     </div>
 
-    <div class="element_table" [ngSwitch]="isContented(article_data['ISSN'])">
+    <div class="element_table" >
       <h1 class="text_table">Issn ID: </h1>
-      <img *ngSwitchCase="true" class="icon" src="./assets/unchecked.png">
-      <img *ngSwitchCase="false" class="icon" src="./assets/checked.png">
+      <h1 class="text_table2">{{this.isContented(article_data['ISSN'])}} </h1>
     </div>
 
-    <div class="element_table" [ngSwitch]="isContented(article_data['volumen'])">
+    <div class="element_table" >
       <h1 class="text_table">Volumen: </h1>
-      <img *ngSwitchCase="true" class="icon" src="./assets/unchecked.png">
-      <img *ngSwitchCase="false" class="icon" src="./assets/checked.png">
+      <h1 class="text_table2">{{this.isContented(article_data['volumen'])}} </h1>
     </div>
 
-    <div class="element_table" [ngSwitch]="isContented(article_data['autores'])">
+    <div class="element_table" >
       <h1 class="text_table">Autores: </h1>
-      <img *ngSwitchCase="true" class="icon" src="./assets/unchecked.png">
-      <img *ngSwitchCase="false" class="icon" src="./assets/checked.png">
+      <h1 class="text_table2">{{this.isContented(article_data['autores'])}} </h1>
     </div>
 
-    <div class="element_table" [ngSwitch]="isContented(article_data['tipo_articulo'])">
+    <div class="element_table" >
       <h1 class="text_table">Tipo Articulo: </h1>
-      <img *ngSwitchCase="true" class="icon" src="./assets/unchecked.png">
-      <img *ngSwitchCase="false" class="icon" src="./assets/checked.png">
+      <h1 class="text_table2">{{this.isContented(article_data['tipo_articulo'])}} </h1>
     </div>
 
-    <div class="element_table" [ngSwitch]="isContented(article_data['nombre_revista'])">
+    <div class="element_table" >
       <h1 class="text_table">Revista editorial: </h1>
-      <img *ngSwitchCase="true" class="icon" src="./assets/unchecked.png">
-      <img *ngSwitchCase="false" class="icon" src="./assets/checked.png">
+      <h1 class="text_table2">{{this.isContented(article_data['nombre_revista'])}} </h1>
     </div>
 
-    <div class="element_table" [ngSwitch]="article_data['marca_verificacion']">
+    <div class="element_table" >
       <h1 class="text_table">Marca Verificación: </h1>
-      <img *ngSwitchCase="false" class="icon" src="./assets/unchecked.png">
-      <img *ngSwitchCase="true" class="icon" src="./assets/checked.png">
+      <h1 class="text_table2">{{this.isContented(article_data['marca_verificacion'])}} </h1>
     </div>
 
-    <div class="element_table"  [ngSwitch]="article_data['paginacion']">
+    <div class="element_table">
       <h1 class="text_table">Paginación: </h1>
-      <img *ngSwitchCase="false" class="icon" src="./assets/unchecked.png">
-      <img *ngSwitchCase="true" class="icon" src="./assets/checked.png" >
+      <h1 class="text_table2">{{this.isContented(article_data['paginacion'])}} </h1>
     </div>
+
+    <div class="element_table">
+      <h1 class="text_table">País: </h1>
+      <h1 class="text_table2">{{this.isContented(article_data['pais'])}} </h1>
+    </div>
+    
+    <div class="element_table">
+    <h1 class="text_table">Fascículo: </h1>
+      <h1 class="text_table2">{{this.isContented(article_data['fasciculo'])}} </h1>
+    </div>
+
   </div>
 </div>
 <div class="sub_main_container">
   <div class="info_container">
     <h1>
-      Del articulo {{ article_data['Nombre'] }} se obtuvo que contiene {{this.get_percent_completed()}} % de los 
-      metadatos evaluados sobre el estandar evaludado Dublin Core.
+      Del artículo se obtuvo que contiene {{this.percent_metadata}} % de los 
+      metadatos posibles registrados en CvLAC.
+    </h1>
+    <br>
+    <h1>
+      A continuación encontrarás el puntaje alcanzado por el artículo "{{ article_data['Nombre'] }}" según la tabla de evaluación diseñada. 
+      Se recuerda que cada metadato registrado aportará un puntaje según la importancia dada, y que el cumplimiento de todos sumará un total 
+      de 15 puntos.
     </h1>
   </div>
   

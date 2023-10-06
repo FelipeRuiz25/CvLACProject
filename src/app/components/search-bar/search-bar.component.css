@@ -113,13 +113,21 @@
     }
     
     .search_bar_container input {
-      width: 50%;
+      width: 75%;
     }
     
     .search_bar_container button {
-      width: 30%;
+      width: 20%;
+      
     }
 
+    
+  .search_bar_container img {
+    border: none;
+    width: 100%;
+    height: 80%;
+    
+  }
 
 
   }

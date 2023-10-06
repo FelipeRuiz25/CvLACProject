@@ -21,4 +21,187 @@
     color: #000;
     text-align: center;
   }
+
+
+  .chart_title {
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 2rem;
+    color: #000;
+    text-align: center;
+    margin-top: 30px;
+
+  }
   
+  .header_title{
+    margin: 0;
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 3rem;
+    color: #000;
+    text-align: left;
+  }
+  
+  .main_container {
+    width: 90%;
+    
+  }
+  
+  .info_container{
+    float: left;
+    width: 50%;
+  }
+  
+  .info_container_radar{
+    float: left;
+    width: 50%;
+    margin-right: 0;
+  }
+  
+  .container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .chart_container2{
+    display: flex;
+    width: 100%;
+  }
+  
+  
+  .title_chart_radar{
+    float: left;
+    width: 40%;
+    margin: 0;
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #000;
+    text-align: justify;
+    line-height: 35px;
+    padding-left: -25px;
+  }
+  
+  .title_chart{
+    float: left;
+    width: 40%;
+    margin: 0;
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #000;
+    text-align: justify;
+    padding-left: 30px;
+    line-height: 35px;
+  
+  }
+
+  .title_chart2 {
+    width: 100%;
+    margin-left: -35px;
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.8rem;
+    color: #000;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+  
+    .chart_title {
+      font-family: "Inter";
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.5rem;
+      color: #000;
+      text-align: center;
+      margin-top: 30px;
+
+    }
+    
+    .header_title {
+      font-family: "Inter";
+      font-style: italic;
+      font-weight: 300;
+      font-size: 2rem;
+      color: #000;
+      text-align: left;
+    }
+    
+    .main_container {
+      width: 90%;
+    }
+    
+    .info_container {
+      width: 100%;
+    }
+    
+    .info_container_radar {
+      width: 100%;
+    }
+    
+    .container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .chart_container2 {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+    
+    .title_chart_radar {
+      width: 100%;
+      margin: 0;
+      font-family: "Inter";
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1rem;
+      color: #000;
+      text-align: justify;
+    }
+    
+    .title_chart {
+      width: 100%;
+      margin-left: -35px;
+      font-family: "Inter";
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1rem;
+      color: #000;
+      text-align: justify;
+    }
+
+
+    .title_chart2 {
+      width: 100%;
+      margin-left: -35px;
+      font-family: "Inter";
+      font-style: italic;
+      font-weight: 400;
+      font-size: .8rem;
+      color: #000;
+      text-align: center;
+    }
+
+        
+    .chart_container {
+      margin-top: 50px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 50px;
+
+    }
+    
+  }

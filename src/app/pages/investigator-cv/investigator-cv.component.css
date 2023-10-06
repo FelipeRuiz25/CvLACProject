@@ -56,3 +56,58 @@ h5.subtitle{
     grid-template-columns: 1fr 1fr;
 
 }
+
+@media (max-width: 768px) {
+    .subtitle {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      padding-left: 10px;
+    }
+    
+    h1.subtitle {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+      margin-top: 30px;
+    }
+    
+    h2.subtitle {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+    
+    h3.subtitle {
+      text-align: center;
+      font-size: 2rem;
+    }
+    
+    h4.subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    
+    h5.subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+    }
+    
+    .item {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin: 0;
+    }
+    
+    .main_container_info {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .info_container {
+      width: 90%;
+      display: block;
+    }
+  }

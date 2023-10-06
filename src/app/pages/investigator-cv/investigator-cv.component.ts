@@ -12,10 +12,10 @@ import { Investigator_Cv } from 'src/app/data_managment/investigator_cv';
 export class InvestigatorCvComponent implements OnInit {
 
 
-  investigator!: Investigator_Cv
+  investigator!: Investigator_Cv //Contiene la informacion personal del investigador 
   url_get_authors_articles = "https://cvlacapi.onrender.com//articles/"; // URL buscar autores
-  url_id_cv !: string
-  investigator_id!:string
+  url_id_cv !: string //el URL con el id que se va a buscar en la api
+  investigator_id!:string //El idnetificador para buscar el investigador qu
   isLoaded = false
 
 
