@@ -3,8 +3,9 @@
 
     <input type="text" [(ngModel)]="name_searched"/>
   </div>
-  <span><button type="image" class="button_search"><img src="./assets/searchbaricon.jpg"
-                                                        (click)="onSearch()"></button></span>
+  <span><button type="reset" class="button_search"><img ngSrc="./assets/searchbaricon.jpg"
+                                                        (click)="onSearch()" alt="./assets/searchbaricon.jpg"
+                                                        height="44" width="48"></button></span>
 </div>
 <div class="flex align-items-center justify-content-end" *ngIf="isClicked">
   <span class="mx-1 text-color">Resultados: </span>

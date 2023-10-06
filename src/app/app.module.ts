@@ -24,6 +24,7 @@ import { ArticlePuntuationChartComponent } from './components/reports/article-pu
 import {ButtonModule} from "primeng/button";
 import {DropdownModule} from "primeng/dropdown";
 import {PaginatorModule} from "primeng/paginator";
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import {PaginatorModule} from "primeng/paginator";
     ChartModule,
     ButtonModule,
     DropdownModule,
-    PaginatorModule
+    PaginatorModule,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]
