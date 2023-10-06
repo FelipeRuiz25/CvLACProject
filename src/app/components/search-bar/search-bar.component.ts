@@ -2,8 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {CvInvestigators} from 'src/app/data_managment/cv-investigators';
 import {DataManagerService} from 'src/app/data_managment/data-manager.service';
 import {HttpParams} from "@angular/common/http";
-import * as url from "url";
-
 
 const URL_NAME_SEARCH = "authors/name/"
 const URL_ID_SEARCH = "authors/id/"
