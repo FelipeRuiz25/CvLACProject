@@ -3,26 +3,43 @@
     width: 100%;
     height: auto;
     background: radial-gradient(50% 50% at 50% 50%, #000 29.17%, #13152C 100%);
-        display: grid;
+    display: grid;
     grid-template-columns: 2fr 1fr;
+    position: relative;
   }
   
   /* Estilos del título del header */
   .title_header {
     font-family: 'Inter', sans-serif;    font-style: italic;
     font-weight: 400;
-    font-size: 3.5rem;
+    font-size: 2rem;
     color: #ffffff;
-    width: 100%;
+    width: 50%;
     margin-top: 15px;
   }
+
+  .collapse_item{
+    border-bottom: 1px solid white ;
+    font-family: 'Inter', sans-serif;    font-style: italic;
+    font-weight: 400;
+    font-size: 1rem;
+     /* Ajusta el grosor y el color según tu preferencia */
+  }
+
+  .collapse_item:hover{
+    background-color: #242853 ;
+     /* Ajusta el grosor y el color según tu preferencia */
+  }
+
+
 
   .container{
     width: 100%;
     height: 100%;
-    padding-top: 150px;
+    padding-top: 20px;
     display: flex;
     justify-content: right;
+    padding-top: 55px;
 
   }
   .menu_header{
@@ -32,23 +49,30 @@
   .container2{
     width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
   }
+
+
+
   
   .row_header {
     display: flex;
     width: 100%;
     float: right;
+    text-align: right;
   }
   
   .column_header {
     padding-left: 10px;
   }
   
-  .column_header a {
+  .menu_option {
     font-family: 'Inter', sans-serif;    font-style: italic;
     font-style: italic;
     font-weight: 400;
-    font-size: 25px;
+    font-size: 20px;
     line-height: 1.2;
     text-decoration-line: underline;
     color: #ffffff;
@@ -58,14 +82,31 @@
   }
 
   .column_header a:hover{
-    font-size: 28px;
+    color: #04218b;
+  }
+
+ 
+  .navbar{
+    width: 100% ;
+    float: right;
+  }
+
+  .collapse {
+    width: 50%;
+  }
+  
+  @media (min-width: 992px) {
+    .navbar-brand {
+      display: block; /* Muestra el texto en dispositivos grandes (lg y superior) */
+    }
   }
 
 /* ... Otros estilos ... */
 
 /* Estilos para la versión móvil (menos de 950px) */
-@media (max-width: 950px) {
+@media (max-width: 400px) {
   .header_container {
+    width: 100%;
     grid-template-columns: 1fr; /* Cambia a una sola columna */
   }
 
