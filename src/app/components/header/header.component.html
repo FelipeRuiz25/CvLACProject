@@ -1,23 +1,25 @@
 <div class="header_container">
-    <h1 class="title_header">Investigation <br>System Comparator</h1>
-    <nav class="menu_header">
-        <div class="container">
-          <div class="container2" >
-            <!-- ... Otros elementos ... -->
-            <div class="hamburger_menu"><img src="/assets/chart_logo..png"></div>
-
-            <ul class="row_header" style="  list-style-type: none;">
-              <li class="column_header">
-                <a href="#" *ngIf="header_titles != undefined "     [routerLink]="this.home_path">{{header_titles[0]}} </a>
-              </li>
-              <li class="column_header">
-                <a href="#" *ngIf="header_titles != undefined "     [routerLink]="this.about_path">{{header_titles[1]}} </a>
-              </li>
-              <li class="column_header">
-                <a href="#" *ngIf="header_titles != undefined "     [routerLink]="this.stats_path">{{header_titles[2]}} </a>
-              </li>
-            </ul>
-          </div>
+  <h1 class="title_header">Investigation System Comparator</h1>
+  <div class="container2">
+    <nav class="navbar navbar-expand-lg navbar-dark " style="text-align: center; width: 100%; ">
+      <div class="container-fluid" style="width: 100%;">
+        <button class="navbar-toggler button-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: solid; border-color: white;">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="position: absolute; width: 100px; background:#0a0b17 ; width: 100%; border-radius: 15px;">
+            <li class="nav-item " >
+              <a class="nav-link active collapse_item" style="color: white;margin-left: 5px; " aria-current="page" [routerLink]="home_path" routerLinkActive="active" *ngIf="header_titles != undefined">{{ header_titles[0] }}</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link active collapse_item" style="color: white;margin-left: 5px; " aria-current="page" [routerLink]="about_path" routerLinkActive="active" *ngIf="header_titles != undefined">{{ header_titles[1] }}</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link active collapse_item" style="color: white;margin-left: 5px; " aria-current="page" [routerLink]="stats_path" routerLinkActive="active" *ngIf="header_titles != undefined">{{ header_titles[2] }}</a>
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
+  </div>
 </div>
