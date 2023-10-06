@@ -2,10 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {CvInvestigators} from 'src/app/data_managment/cv-investigators';
 import {DataManagerService} from 'src/app/data_managment/data-manager.service';
 import {HttpParams} from "@angular/common/http";
+import * as url from "url";
 
 
 const URL_NAME_SEARCH = "authors/name/"
-const URL_ID_SEARCH = "authors/id"
+const URL_ID_SEARCH = "authors/id/"
 
 interface PageEvent {
   first: number;
@@ -63,11 +64,17 @@ export class SearchBarComponent implements OnInit {
   }
 
   search(){
+    if (this.name_searched == ""){
+      this.isClicked = false
+      return
+    }
     let params = new HttpParams()
       .append('limit', this.limit)
       .append('page', this.page);
+    let url = this.get_search_url(this.name_searched)
+    console.log(url)
     this.dataManagerService
-      .getAuthorsBy(URL_NAME_SEARCH + this.name_searched.toLowerCase(), params)
+      .getAuthorsBy(url, params)
       .subscribe(result => {
           this.list_authors = result.authors;
           this.total_records = result.total_number
@@ -77,15 +84,27 @@ export class SearchBarComponent implements OnInit {
       );
   }
 
+  /**
+   * Defines whether perform an id or name search
+   * @param name search name
+   * @private
+   */
+  private get_search_url(name: string): string{
+    name = name.toLowerCase().trim()
+    const regex = /^\d+$/;
+    if (regex.test(name)){
+      return URL_ID_SEARCH + name
+    }
+    return URL_NAME_SEARCH + name
+  }
+
   redirectToCv(id_investigator:string): void {
     console.log(id_investigator)
     window.location.href = window.location.href.replace("/home", "/cvview/") + id_investigator;
   }
 
-
-
   format_text(text: string): string {
-    return text.toUpperCase().toLowerCase().replace(/\n/g, '');
+    return text.toLowerCase().replace(/\n/g, '');
   }
 
   ngOnInit(): void {

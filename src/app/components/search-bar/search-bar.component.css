@@ -16,7 +16,6 @@
     border-bottom: 1px solid #000;
     border-left: 1px solid #000;
     background: linear-gradient(180deg, #FFF 0%, #DFE2FF 89.46%);
-
   }
 
   .button_search{
@@ -88,6 +87,7 @@
     margin-top: 0;
     margin-left: 3px;
     font-weight: normal;
+    border: 1px solid wheat;
   }
 
   h1.element:hover {
