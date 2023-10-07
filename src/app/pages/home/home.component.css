@@ -16,7 +16,6 @@
     color: #000;
     text-align: center;
     margin-top: 40px;
-    margin-bottom: 80px;
     width: 50%;
 }
 
@@ -66,7 +65,7 @@ hr {
 .logo:hover{
     height: 78px;;
 }
-  
+
   @media (max-width: 768px) {
     .subtitle {
         font-size: 2rem;
@@ -79,10 +78,8 @@ hr {
         text-align: center;
         width: 100%;
     }
-
     .logo{
         height: 40px;
     }
 
-    
 }
