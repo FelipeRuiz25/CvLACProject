@@ -1,13 +1,11 @@
 .main_container{
   width: 100%;
   margin-top: 25px;
-  display: flex;  
+  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  
 }
-
 
 .search_bar_container {
     width: 65%;
@@ -17,10 +15,9 @@
     border-bottom: 1px solid #000;
     border-left: 1px solid #000;
     background: linear-gradient(180deg, #FFF 0%, #DFE2FF 89.46%);
-
   }
 
-  .button_search{
+  .button_search {
     width: 50px;
     height: 50px;
     flex-shrink: 0;
@@ -29,13 +26,13 @@
     border: transparent;
     margin-left: 40px;
   }
-  
+
   .button_search img {
     border: none;
     width: 100%;
     height: 80%;
     background: transparent;
-    
+
   }
 
   .button_search:hover {
@@ -56,12 +53,10 @@
     text-align: center;
     float: left;
   }
-  
+
   .search_bar_container input:focus {
     outline: none; /* Elimina el contorno predeterminado al hacer foco */
   }
-
-
 
   .main_container2{
       width: 80%;
@@ -76,32 +71,24 @@
       font-size: .8rem;
       color: #000000;
   }
- 
+
   .table_results{
     width: 10%;
     text-align: center;
-
   }
 
   h1.element{
     width: 98%;
     text-align: center;
-    border: solid;
-    border-color: black;
-    border-width: 1px;
     margin-top: 0;
     margin-left: 3px;
     font-weight: normal;
+    border: 1px solid wheat;
   }
 
   h1.element:hover {
-    background-color: lightgray;
+    border: 1px dashed;
   }
-
-
-
-
-
 
   @media screen and (max-width: 768px) {
     .search_bar_container {
@@ -111,22 +98,22 @@
       right: 0;
       margin: auto;
     }
-    
+
     .search_bar_container input {
       width: 75%;
     }
-    
+
     .search_bar_container button {
       width: 20%;
-      
+
     }
 
-    
+
   .search_bar_container img {
     border: none;
     width: 100%;
     height: 80%;
-    
+
   }
 
 
