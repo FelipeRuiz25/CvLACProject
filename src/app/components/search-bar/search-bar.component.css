@@ -94,9 +94,6 @@
     .search_bar_container {
       width: 60%;
       height: 40px;
-      left: 0;
-      right: 0;
-      margin: auto;
     }
 
     .search_bar_container input {
@@ -107,6 +104,9 @@
       width: 20%;
 
     }
+    .search_bar_container input{
+      font-size: 15px;
+    }
 
 
   .search_bar_container img {
@@ -114,6 +114,10 @@
     width: 100%;
     height: 80%;
 
+  }
+  .button_search{
+    height: 40px;
+    width: 40px;
   }
 
 
