@@ -17,9 +17,11 @@
 </div>
 <div class="main_container">
   <div class="main_container2" *ngIf="isClicked">
-    <h1 class="element" *ngFor="let author of list_authors"><a
-      (click)="redirectToCv(author.id_cv)">{{format_text(author.Nombre)}}
-      <br> {{format_text(author.id_cv)}} </a>
+    <h1 class="element" *ngFor="let author of list_authors">
+      <a (click)="redirectToCv(author.id_cv)">
+        {{format_text(author.Nombre)}}
+        <br> {{format_text(author.id_cv)}}
+      </a>
     </h1>
   </div>
 </div>
