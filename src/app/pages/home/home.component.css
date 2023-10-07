@@ -30,6 +30,7 @@ hr {
 
 .header_line{
     width: 80%;
+    text-align: center;
 }
 
 .logo_container{
@@ -74,8 +75,14 @@ hr {
     }
 
     .search_instruction {
-        font-size: 1.5rem;
+        font-size: 1rem;
         text-align: center;
         width: 100%;
     }
+
+    .logo{
+        height: 40px;
+    }
+
+    
 }
