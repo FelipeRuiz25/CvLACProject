@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import {HttpClient, HttpParams} from "@angular/common/http";
 import { Observable } from "rxjs";
-import {AuthorsSearchResult, CvInvestigators} from "./cv-investigators";
+import {AuthorsSearchResult} from "./cv-investigators";
 import { Investigator_Cv } from "./investigator_cv";
 import { Articulo_Data } from "./article_data";
 import { Country_Report } from "./country_report";

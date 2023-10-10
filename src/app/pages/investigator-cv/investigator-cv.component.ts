@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataManagerService } from 'src/app/data_managment/data-manager.service';
 import { Investigator_Cv } from 'src/app/data_managment/investigator_cv';
