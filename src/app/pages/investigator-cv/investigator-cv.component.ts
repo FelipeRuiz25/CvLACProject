@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AppModule } from 'src/app/app.module';
 import { DataManagerService } from 'src/app/data_managment/data-manager.service';
 import { Investigator_Cv } from 'src/app/data_managment/investigator_cv';
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-investigator-cv',
@@ -12,15 +12,15 @@ import { Investigator_Cv } from 'src/app/data_managment/investigator_cv';
 export class InvestigatorCvComponent implements OnInit {
 
 
-  investigator!: Investigator_Cv //Contiene la informacion personal del investigador 
-  url_get_authors_articles = "https://cvlacapi.onrender.com//articles/"; // URL buscar autores
+  investigator!: Investigator_Cv //Contiene la informacion personal del investigador
+  url_get_authors_articles = environment.apiUrl+"/articles/"; // URL buscar autores
   url_id_cv !: string //el URL con el id que se va a buscar en la api
   investigator_id!:string //El idnetificador para buscar el investigador qu
   isLoaded = false
 
 
   constructor(private dataManagerService:DataManagerService,private route: ActivatedRoute,private currentRouter: Router) {
-    
+
   }
 
   ngOnInit(): void {

@@ -12,6 +12,7 @@ const routes: Routes = [
   { path : 'article_metrics/:id/:article_index', component : ArticleMetricsComponent},
   { path : 'stats', component : StatsComponent} ,
   { path : 'about', component : AboutComponent} ,
+  { path : '**', redirectTo : 'home' , pathMatch : 'full'}
 ];
 
 
@@ -20,6 +21,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {   
+export class AppRoutingModule {
 }
 

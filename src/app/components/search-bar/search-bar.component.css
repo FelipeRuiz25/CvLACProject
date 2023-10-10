@@ -1,4 +1,4 @@
-.main_container{
+.main_container {
   width: 100%;
   margin-top: 25px;
   display: flex;
@@ -8,106 +8,151 @@
 }
 
 .search_bar_container {
-    width: 65%;
-    height: 50px;
-    text-align: center;
-    border-radius: 20px;
-    border-bottom: 1px solid #000;
-    border-left: 1px solid #000;
-    background: linear-gradient(180deg, #FFF 0%, #DFE2FF 89.46%);
-  }
-
-  .button_search {
-    width: 50px;
-    height: 50px;
-    flex-shrink: 0;
-    border-radius: 20px;
-    background: #17192C;
-    border: transparent;
-    margin-left: 40px;
-  }
-
-  .button_search img {
-    border: none;
-    width: 100%;
-    height: 80%;
-    background: transparent;
-
-  }
-
-  .button_search:hover {
-    transform: scale(1.1); /* Cambia el tamaño al 120% al pasar el mouse sobre la imagen */
+  width: 65%;
+  height: 50px;
+  text-align: center;
+  border-radius: 20px;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  background: linear-gradient(180deg, #FFF 0%, #DFE2FF 89.46%);
 }
 
+.button_search {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #17192C;
+  border: transparent;
+  margin-left: 40px;
+}
+
+.button_search img {
+  border: none;
+  width: 100%;
+  height: 80%;
+  background: transparent;
+
+}
+
+.button_search:hover {
+  transform: scale(1.1); /* Cambia el tamaño al 120% al pasar el mouse sobre la imagen */
+}
+
+.search_bar_container input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 20px;
+  background-color: transparent;
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 2.0rem;
+  color: #000000;
+  text-align: center;
+  float: left;
+}
+
+.search_bar_container input:focus {
+  outline: none; /* Elimina el contorno predeterminado al hacer foco */
+}
+
+.main_container2 {
+  width: 80%;
+  height: 400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  overflow: auto;
+  text-align: center;
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: normal;
+  font-size: .8rem;
+  color: #000000;
+}
+
+.table_results {
+  width: 10%;
+  text-align: center;
+}
+
+h1.element {
+  width: 98%;
+  text-align: center;
+  margin-top: 0;
+  margin-left: 3px;
+  font-weight: normal;
+  border: 1px solid wheat;
+}
+
+h1.element:hover {
+  border: 1px dashed;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Enable wrapping for responsive layout */
+  justify-content: space-between;
+}
+
+.card-content {
+  padding: 0;
+  flex: 1 0 80%; /* Take 80% of available space, don't shrink, don't grow */
+}
+
+.card-buttons {
+  flex: 1 0 20%; /* Take 20% of available space, don't shrink, don't grow */
+  text-align: right;
+}
+
+::ng-deep .p-card .p-card-content {
+  padding: 0
+}
+
+::ng-deep .p-card:hover {
+  border-style: dotted;
+  border-width: 2px;
+  border-radius: 0;
+}
+
+.result-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-list .pagination {
+  justify-content: center;
+  align-items: center;
+}
+
+/* Media query for responsive layout */
+@media (max-width: 767px) {
+  .card-content,
+  .card-buttons {
+    flex: 100%; /* Make them both take 100% of the available space on small screens */
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .search_bar_container {
+    width: 60%;
+    height: 40px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
   .search_bar_container input {
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 20px;
-    background-color: transparent;
-    font-family: "Inter";
-    font-style: italic;
-    font-weight: 400;
-    font-size: 2.0rem;
-    color: #000000;
-    text-align: center;
-    float: left;
+    width: 75%;
   }
 
-  .search_bar_container input:focus {
-    outline: none; /* Elimina el contorno predeterminado al hacer foco */
+  .search_bar_container button {
+    width: 20%;
+
   }
-
-  .main_container2{
-      width: 80%;
-      height: 400px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      overflow: auto;
-      text-align: center;
-      font-family: "Inter";
-      font-style: italic;
-      font-weight: normal;
-      font-size: .8rem;
-      color: #000000;
-  }
-
-  .table_results{
-    width: 10%;
-    text-align: center;
-  }
-
-  h1.element{
-    width: 98%;
-    text-align: center;
-    margin-top: 0;
-    margin-left: 3px;
-    font-weight: normal;
-    border: 1px solid wheat;
-  }
-
-  h1.element:hover {
-    border: 1px dashed;
-  }
-
-  @media screen and (max-width: 768px) {
-    .search_bar_container {
-      width: 60%;
-      height: 40px;
-      left: 0;
-      right: 0;
-      margin: auto;
-    }
-
-    .search_bar_container input {
-      width: 75%;
-    }
-
-    .search_bar_container button {
-      width: 20%;
-
-    }
-
 
   .search_bar_container img {
     border: none;
@@ -115,6 +160,10 @@
     height: 80%;
 
   }
+}
 
-
-  }
+.scrollable-container {
+  max-height: 600px; /* Adjust the height as needed */
+  overflow-y: auto; /* Enable vertical scrollbar when content exceeds the container height */
+  /* Other styling properties if needed */
+}

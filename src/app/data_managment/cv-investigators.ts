@@ -25,10 +25,12 @@ export interface AuthorsSearchResult {
 export class CvInvestigators {
     Nombre!:string;
     id_cv!:string;
-    job_info!: []
-    constructor(full_name:string, id:string, job_info:[]){
+    Nacionalidad!: string;
+    job_info!: string[]
+    constructor(full_name:string, id:string, nationality:string, job_info:[]){
         this.Nombre = full_name
         this.id_cv = id
+        this.Nacionalidad = nationality
         this.job_info = job_info
     }
 }

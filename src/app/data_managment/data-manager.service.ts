@@ -7,7 +7,7 @@ import { Articulo_Data } from "./article_data";
 import { Country_Report } from "./country_report";
 import {environment} from "../../environments/environment";
 
-const apiUrl = environment.localApiUrl
+const apiUrl = environment.apiUrl
 
 @Injectable({
   providedIn: 'root'

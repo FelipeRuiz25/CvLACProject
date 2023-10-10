@@ -6,22 +6,36 @@
                                                         (click)="onSearch()" alt="./assets/searchbaricon.jpg"
                                                         height="44" width="48"></button></span>
 </div>
-<div class="flex align-items-center justify-content-end" *ngIf="isClicked">
-  <span class="mx-1 text-color">Resultados: </span>
-  <p-dropdown [options]="options" optionLabel="label" optionValue="value" [(ngModel)]="limit"
-              (ngModelChange)="onLimitChange()"></p-dropdown>
-  <p-paginator [first]="first" [rows]="limit" [totalRecords]="total_records"
-               (onPageChange)="onPageChange($event)" [showCurrentPageReport]="true"
-               currentPageReportTemplate="{first} - {last} de {totalRecords}" [showPageLinks]="false"
-               [showFirstLastIcon]="true"></p-paginator>
+<p-divider></p-divider>
+<div class="result-list">
+  <div class="col-6 pagination flex" *ngIf="isClicked">
+    <span class="mx-1 text-color">Resultados: </span>
+    <p-dropdown class="flex-1" [options]="options" optionLabel="label" optionValue="value" [(ngModel)]="limit"
+                (ngModelChange)="onLimitChange()"></p-dropdown>
+    <p-paginator class="" [first]="first" [rows]="limit" [totalRecords]="total_records"
+                 (onPageChange)="onPageChange($event)" [showCurrentPageReport]="true"
+                 currentPageReportTemplate="{first} - {last} de {totalRecords}" [showPageLinks]="false"
+                 [showFirstLastIcon]="true"></p-paginator>
+  </div>
 </div>
-<div class="main_container">
-  <div class="main_container2" *ngIf="isClicked">
-    <h1 class="element" *ngFor="let author of list_authors">
-      <a (click)="redirectToCv(author.id_cv)">
-        {{format_text(author.Nombre)}}
-        <br> {{format_text(author.id_cv)}}
-      </a>
-    </h1>
+<div class="scrollable-container">
+  <div class="result-list">
+    <div class="col-6">
+      <p-card header="{{author.Nombre}}" *ngFor="let author of slice_list">
+        <div class="card-content">
+          <p class="m-0"><i class="pi pi-user"></i> {{author.id_cv}} - {{author.Nacionalidad}}</p>
+          <p *ngIf="author.job_info"><i class="pi pi-map-marker"></i> {{author.job_info[0]}} - {{author.job_info[1]}}
+            - {{author.job_info[2]}}</p>
+        </div>
+        <div class="card-buttons">
+          <p-button (onClick)="open_cvlac_curriculum(author.id_cv)" icon="pi pi-link"
+                    styleClass="p-button-rounded p-button-secondary p-button-outlined"
+                    pTooltip="Ver en CvLAC" tooltipPosition="right"></p-button>
+          <p-button (onClick)="redirectToCv(author.id_cv)" icon="pi pi-eye"
+                    styleClass="p-button-rounded p-button-secondary"
+                    pTooltip="Ver información" tooltipPosition="right" [style]="{ 'margin-left': '.5em' }"></p-button>
+        </div>
+      </p-card>
+    </div>
   </div>
 </div>

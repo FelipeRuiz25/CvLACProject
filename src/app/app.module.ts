@@ -25,6 +25,11 @@ import {ButtonModule} from "primeng/button";
 import {DropdownModule} from "primeng/dropdown";
 import {PaginatorModule} from "primeng/paginator";
 import {NgOptimizedImage} from "@angular/common";
+import {CardModule} from "primeng/card";
+import {DividerModule} from "primeng/divider";
+import {DataViewModule} from "primeng/dataview";
+import {FieldsetModule} from "primeng/fieldset";
+import { TooltipModule } from 'primeng/tooltip';
 
 @NgModule({
   declarations: [
@@ -55,7 +60,12 @@ import {NgOptimizedImage} from "@angular/common";
     ButtonModule,
     DropdownModule,
     PaginatorModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    CardModule,
+    DividerModule,
+    DataViewModule,
+    FieldsetModule,
+    TooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
