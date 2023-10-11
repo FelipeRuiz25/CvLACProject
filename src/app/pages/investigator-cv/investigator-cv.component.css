@@ -2,25 +2,29 @@
     margin-top: 20px;
     font-family: "Inter";
     font-style: italic;
-    font-weight: 400;    
+    font-weight: 200;    
     color: #000;
     padding-left: 15px;
 }
 
 h1.subtitle{
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 80px;
     margin-top: 50px;
 }
+
 h2.subtitle{
-    font-size: 2.2rem;
-    font-weight: 600;
+    font-size: 1.8rem;
+    margin-bottom: 40px;;
+    font-weight: 400;
+
 }
 
 h3.subtitle{
     text-align: center;
-    font-size: 2.3rem;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
 }
 
 h4.subtitle{
@@ -31,7 +35,7 @@ h4.subtitle{
 
 h5.subtitle{
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .item{
@@ -51,9 +55,10 @@ h5.subtitle{
 
 
 .info_container{
-    width: 80%;
+    width: 90%;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
 
 }
 
