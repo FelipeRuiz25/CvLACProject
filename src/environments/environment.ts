@@ -5,7 +5,6 @@
 export const environment = {
   production: false,
   apiUrl: "https://cvlacapi.onrender.com/",
-  localApiUrl: "http://localhost:5000/"
 };
 
 /*
