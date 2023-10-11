@@ -56,6 +56,7 @@ export class SearchBarComponent implements OnInit {
   }
 
   onLimitChange(){
+    
     this.page = 0
     this.first = 0
     this.search()
