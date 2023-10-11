@@ -26,6 +26,7 @@ export class SearchBarComponent implements OnInit {
   slice_list!: CvInvestigators[]
   name_searched:string   = ""
   isClicked = false;
+  isLoaded:boolean = false;
 
   /**
    * number of items per page options
@@ -52,9 +53,11 @@ export class SearchBarComponent implements OnInit {
 
 
   onSearch() {
+    this.isClicked = true
     this.first = 0
     this.page = 0
     this.server_page = 0
+    this.isLoaded = false
     this.search()
   }
 
@@ -95,6 +98,7 @@ export class SearchBarComponent implements OnInit {
           this.list_authors = result.authors;
           this.slice_list = this.get_slice()
           this.total_records = result.total_number
+          this.isLoaded = true;
           console.log(result)
           this.isClicked = true;
         }
