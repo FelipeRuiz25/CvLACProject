@@ -71,6 +71,7 @@ export class SearchBarComponent implements OnInit {
   }
 
   onLimitChange(){
+
     this.server_limit = this.calc_server_limit()
     this.page = 0
     this.server_page = 0
