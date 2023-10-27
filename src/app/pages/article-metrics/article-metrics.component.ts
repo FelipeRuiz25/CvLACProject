@@ -2,6 +2,12 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Articulo_Data } from 'src/app/data_managment/article_data';
 import { DataManagerService } from 'src/app/data_managment/data-manager.service';
+import {environment} from "../../../environments/environment";
+import {ArticleRating} from "../../data_managment/article-rating";
+import {forkJoin} from "rxjs";
+import {CVLAC_URL} from "../../components/search-bar/search-bar.component"
+
+const MINIMUM_VERIFIED_SCORE = 8;
 
 @Component({
   selector: 'app-article-metrics',
@@ -10,13 +16,15 @@ import { DataManagerService } from 'src/app/data_managment/data-manager.service'
 })
 export class ArticleMetricsComponent implements OnInit {
 
-  private url_get_authors_articles = "https://cvlacapi.onrender.com//articles/"; // URL buscar autores
-  private investigator_id = this.route.snapshot.params['id']
+  private urlGetAuthorsArticles = environment.apiUrl + "articles/"; // URL buscar autores
+  investigatorId = this.route.snapshot.params['id']
   private article_index = this.route.snapshot.params['article_index']
-  
+
   article_data!:any
+  articleRating!: ArticleRating
   article_name!:string
   isLoaded = false
+  isVerified = false
 
   percent_metadata!:number
   data!:any
@@ -25,15 +33,27 @@ export class ArticleMetricsComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.dataManagerService.getArticlesData(this.url_get_authors_articles + this.investigator_id + "/" + this.article_index)
-      .subscribe(article => {
-        this.data = article;
-        console.log(article)
-        this.set_article_info()
-        this.article_name = this.article_data['nombre_articulo']
-        this.isLoaded = true
-        this.get_percent_completed()
-    });
+    let articleId = this.investigatorId + "/" + this.article_index
+    const dataRequest = this.dataManagerService
+      .getArticlesData(this.urlGetAuthorsArticles + articleId)
+    const ratingRequest = this.dataManagerService
+      .getArticleRating(this.urlGetAuthorsArticles + "/rating/" + articleId)
+    forkJoin([dataRequest,ratingRequest]).subscribe({
+      next: ([article,rating]) => {
+      console.log(article,rating)
+      this.data = article;
+      this.articleRating = <ArticleRating> rating;
+      this.isVerified = this.articleRating.resource_identifier >= MINIMUM_VERIFIED_SCORE
+      console.log(article)
+      this.set_article_info()
+      this.article_name = this.article_data['nombre_articulo']
+      this.isLoaded = true
+      this.get_percent_completed()
+      },
+      error: err => {
+        console.log(err)
+      }
+    })
     if(this.isLoaded){
       this.get_percent_completed()
     }
@@ -83,5 +103,9 @@ export class ArticleMetricsComponent implements OnInit {
     console.log("Datos true: " + this.article_data.get_metadata_true() +"\n Datos False: " + this.article_data.get_metadata_false())
     this.percent_metadata = this.article_data.get_metadata_true() / (this.article_data.get_metadata_true() + this.article_data.get_metadata_false()) * 100 //Se le resta uno del indice que le pusimos para indentificar
     this.percent_metadata = Math.trunc(this.percent_metadata)
+  }
+
+  getCvlacArticlesUrl(): string{
+      return CVLAC_URL+this.investigatorId+'#articulos';
   }
 }

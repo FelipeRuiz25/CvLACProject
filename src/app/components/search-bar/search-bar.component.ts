@@ -4,7 +4,7 @@ import {DataManagerService} from 'src/app/data_managment/data-manager.service';
 import {HttpParams} from "@angular/common/http";
 
 const PAGES_PER_REQUEST = 10;
-const CVLAC_URL = "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=";
+export const CVLAC_URL = "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=";
 const URL_NAME_SEARCH = "authors/name/";
 const URL_ID_SEARCH = "authors/id/";
 

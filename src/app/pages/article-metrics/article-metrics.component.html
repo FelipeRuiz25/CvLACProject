@@ -1,12 +1,27 @@
-<h1 class="subtitle">Evaluación Métricas según Dublin Core</h1>
-<h1 class="subtitle2" *ngIf="isLoaded">A continuación encontramos la evaluación de calidad de los datos propuestas,
-para ellos tomamos en cuenta los metadatos extraídos para ser evaluados del artículo: </h1>
-<br>
-<div class="title_container">
-    <h1 class="article_title" *ngIf="isLoaded">Nombre Artículo :  <h1 class="article_content">{{this.data["nombre_articulo"]}}</h1></h1>
+<div class="main_container">
+  <div class="title_container" *ngIf="isLoaded">
+    <h1 class="article_title">
+      <h1>{{this.data["nombre_articulo"]}}</h1>
+    </h1>
+    <p>
+      {{this.data['autores']}}&nbsp;
+      <a href="{{getCvlacArticlesUrl()}}" target="_blank" tooltipPosition="right"
+         pTooltip="Ver en CvLAC">
+        <i class="pi pi-external-link" style="font-size: 1rem"></i>
+      </a>
+    </p>
+    <p-chip label="{{articleRating.total}}/100 Puntos" icon="pi pi-bookmark-fill"></p-chip>
+    <p-chip *ngIf="isVerified" label="Verificado" icon="pi pi-verified" tooltipPosition="right"
+            pTooltip="La información de este articulo es veraz y corresponde con los datos de Crossref"></p-chip>
+    <p-chip *ngIf="article_data['marca_verificacion']" label="Avalado" icon="pi pi-thumbs-up-fill" tooltipPosition="right"
+            pTooltip="Este articulo es un producto avalado y validado por la última Convocatoria Nacional para el Reconocimiento y Medición de Grupos de Investigación, Desarrollo Tecnológico o de Innovación y para el Reconocimiento de Investigadores del SNCTeI"
+    ></p-chip>
+  </div>
 </div>
-<app-metrics-table [article_data]="article_data" [percent_metadata]="percent_metadata" *ngIf="isLoaded"></app-metrics-table>
+<app-metrics-table [article_data]="article_data" [percent_metadata]="percent_metadata"
+                   [article_cvlac_html]="data['texto_original']"
+                   *ngIf="isLoaded"></app-metrics-table>
 <app-puntuation-table [article_data]="article_data" *ngIf="isLoaded"></app-puntuation-table>
-<app-article-puntuation-chart [article_name]= "this.article_name" *ngIf="isLoaded"></app-article-puntuation-chart>
+<app-article-puntuation-chart [article_name]="this.article_name" *ngIf="isLoaded"></app-article-puntuation-chart>
 <br><br><br>
 

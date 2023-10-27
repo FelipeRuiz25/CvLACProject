@@ -6,6 +6,7 @@ import { Investigator_Cv } from "./investigator_cv";
 import { Articulo_Data } from "./article_data";
 import { Country_Report } from "./country_report";
 import {environment} from "../../environments/environment";
+import {ArticleRating} from "./article-rating";
 
 const apiUrl = environment.apiUrl
 
@@ -27,6 +28,10 @@ export class DataManagerService {
 
   public getArticlesData(url:string): Observable<Articulo_Data> {
     return this.http.get<Articulo_Data>(url);
+  }
+
+  public getArticleRating(url:string): Observable<ArticleRating> {
+    return this.http.get<ArticleRating>(url)
   }
 
   public getCountriesReportData(url:string): Observable<Country_Report> {
