@@ -19,7 +19,7 @@
 
 .main_container {
   width: 90%;
-  
+
 }
 
 .info_container{
@@ -86,7 +86,7 @@
     color: #000;
     text-align: center;
   }
-  
+
   .header_title {
     font-family: "Inter";
     font-style: italic;
@@ -95,15 +95,15 @@
     color: #000;
     text-align: left;
   }
-  
+
   .main_container {
     width: 90%;
   }
-  
+
   .info_container {
     width: 100%;
   }
-  
+
   .info_container_radar {
     width: 100%;
   }
@@ -114,13 +114,13 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .chart_container2 {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
   }
-  
+
   .title_chart_radar {
     width: 100%;
     margin: 0;
@@ -131,7 +131,7 @@
     color: #000;
     text-align: justify;
   }
-  
+
   .title_chart {
     width: 100%;
     margin-left: -35px;
@@ -142,7 +142,7 @@
     color: #000;
     text-align: justify;
   }
-  
+
 }
 
 

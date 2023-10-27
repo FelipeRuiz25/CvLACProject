@@ -7,8 +7,8 @@ import { Articulo_Data } from 'src/app/data_managment/article_data';
   styleUrls: ['./metrics-table.component.css']
 })
 export class MetricsTableComponent implements OnInit {
-  
 
+  cvlac_view = false
   @Input() article_data!:Articulo_Data
   @Input() percent_metadata!:number
 

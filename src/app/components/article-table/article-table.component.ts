@@ -17,11 +17,11 @@ export class ArticleTableComponent implements OnInit{
  @Input() url_body!:string
 
  isLoaded = false
- 
+
  list_articles!:Article_Author[]
 
  constructor(){
- 
+
   /**/
  }
 
@@ -31,19 +31,9 @@ export class ArticleTableComponent implements OnInit{
     this.isLoaded = true
   }
 
-
-  
-
   redirectToArticleData(article_index:number): void {
     this.url_body = window.location.href.replace('cvview', 'article_metrics');
     const url = this.url_body + "/" + article_index;
     window.location.href = url;
   }
-
-
-
- 
-  
-
-
 }

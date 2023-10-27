@@ -6,8 +6,9 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     position: relative;
+    margin-bottom: 1rem;
   }
-  
+
   /* Estilos del título del header */
   .title_header {
     font-family: 'Inter', sans-serif;    font-style: italic;
@@ -56,18 +57,18 @@
 
 
 
-  
+
   .row_header {
     display: flex;
     width: 100%;
     float: right;
     text-align: right;
   }
-  
+
   .column_header {
     padding-left: 10px;
   }
-  
+
   .menu_option {
     font-family: 'Inter', sans-serif;    font-style: italic;
     font-style: italic;
@@ -85,7 +86,7 @@
     color: #04218b;
   }
 
- 
+
   .navbar{
     width: 100% ;
     float: right;
@@ -94,7 +95,7 @@
   .collapse {
     width: 50%;
   }
-  
+
   @media (min-width: 992px) {
     .navbar-brand {
       display: block; /* Muestra el texto en dispositivos grandes (lg y superior) */
@@ -132,6 +133,6 @@
 }
 
 
-  
+
 
   
