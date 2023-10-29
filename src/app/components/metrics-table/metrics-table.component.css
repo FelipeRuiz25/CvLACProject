@@ -4,14 +4,15 @@
   justify-content: center;
   margin-top: 90px;
 }
+
 .container{
-  width: 90%;
+  width: 100%;
   box-sizing: border-box;
   border-radius: 30px;
   margin-bottom: 50px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  row-gap: 20px;
+  column-gap: 20px;
   
 }
 
@@ -23,6 +24,7 @@
   color: #000000;
   text-align: center;
   display: flex;
+  margin-top: 20px;
   justify-content: center;
   align-items: center; 
 }
@@ -39,14 +41,20 @@ img{
 
 .text_table{
   float: left;
-  width: 70%;
+  width: 100%;
   font-weight: 800;
-  font-size: 2.4rem;
+  font-size: 1.4rem;
+  text-align: left;
 }
 
 .text_table2{
   float: left;
-  width: 70%;
+  width: 100%;
+  font-size: 1.4rem;
+  text-align: left;
+  text-overflow: ellipsis; /* Muestra puntos suspensivos (...) si el texto sobrepasa el ancho máximo */
+
+
 }
 
 .sub_main_container{
@@ -60,13 +68,13 @@ img{
   width: 80%;
   font-family: "Inter";
   font-size: 1.2rem;
-  color: #000000;
   text-align: center;
   text-align: justify;
 }
 
 h1{
   font-weight: 200;
+  font-size: 1.4rem;
 }
 
 /* Estilos para pantallas de 768px o menos */

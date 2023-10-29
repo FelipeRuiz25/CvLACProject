@@ -31,17 +31,18 @@
   
   
   .icon{
-    width: 20%;
+    height: 50px;
   }
   
   img{
-    width: 30%;
     float: right;
   }
   
   .text_table{
     float: left;
     width: 70%;
+    font-size: 1.3rem;
+    font-weight: 400;
   }
   
   .sub_main_container{
@@ -62,6 +63,9 @@
   
   h1{
     font-weight: 200;
+    font-family: "Inter";
+    font-size: 1.4rem;
+    margin-bottom: 40px;
   }
 
   .puntuation_table{
@@ -74,10 +78,12 @@
     border: solid;
     margin-left: 15%;
     margin-bottom: 50px;
+    padding-top: 20px;
+
   }
 
   .puntuation_table_item{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     
   }
   
