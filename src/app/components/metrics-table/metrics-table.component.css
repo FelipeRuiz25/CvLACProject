@@ -1,18 +1,57 @@
+.view_container{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+  background-color: #FFFFFF;
+  border: 1px solid #e2eaf2;
+  border-radius: 12px;
+  padding: 0.5rem;
+}
+
+.view_container h2 {
+  padding: 2px 10px;
+}
+
+.bold-title {
+  background: #dee2e6;
+  color: #51585e;
+  border-radius: 2rem;
+}
+
 .main_container{
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 90px;
 }
-.container{
+
+.second_container{
   width: 90%;
   box-sizing: border-box;
-  border-radius: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   display: grid;
+  font-size: 1.2rem;
   grid-template-columns: repeat(2, 1fr);
-  row-gap: 20px;
-  
+  row-gap: 5px;
+  background-color: #FFFFFF;
+  border: 1px solid #e2eaf2;
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+::ng-deep .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+  background: #ced4da;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+::ng-deep .p-inputswitch:not(.p-disabled):hover .p-inputswitch-slider,
+::ng-deep .p-inputswitch.p-inputswitch-checked:not(.p-disabled):hover .p-inputswitch-slider {
+  background: #232659;
+}
+
+.second_container b{
+  color: #757575;
 }
 
 .element_table{
@@ -24,7 +63,7 @@
   text-align: center;
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 }
 
 
@@ -57,7 +96,6 @@ img{
 }
 
 .info_container{
-  width: 80%;
   font-family: "Inter";
   font-size: 1.2rem;
   color: #000000;
@@ -77,8 +115,8 @@ h1{
     justify-content: center;
     margin-top: 60px;
   }
-  
-  .container {
+
+  .second_container {
     width: 90%;
     height: auto;
     background: #EEF0FE;
@@ -88,7 +126,7 @@ h1{
     display: block;
     grid-template-columns: 1fr 1fr;
   }
-  
+
   .element_table {
     font-family: "Inter";
     font-style: italic;
@@ -100,29 +138,29 @@ h1{
     justify-content: center;
     align-items: center;
   }
-  
+
   .icon {
     width: 30%;
   }
-  
+
   img {
     width: 50%;
     float: none;
     margin: 0 auto;
   }
-  
+
   .text_table {
     float: none;
     width: 100%;
   }
-  
+
   .sub_main_container {
     width: 100%;
     display: flex;
     justify-content: center;
     text-align: center;
   }
-  
+
   .info_container {
     width: 90%;
     font-family: "Inter";
@@ -131,7 +169,7 @@ h1{
     text-align: center;
     text-align: justify;
   }
-  
+
   h1 {
     font-weight: 200;
     font-size: 1.5rem;

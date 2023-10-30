@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Articulo_Data } from 'src/app/data_managment/article_data';
+import {Component, Input, OnInit} from '@angular/core';
+import {Articulo_Data} from 'src/app/data_managment/article_data';
 
 @Component({
   selector: 'app-metrics-table',
@@ -9,10 +9,12 @@ import { Articulo_Data } from 'src/app/data_managment/article_data';
 export class MetricsTableComponent implements OnInit {
 
   cvlac_view = false
-  @Input() article_data!:Articulo_Data
-  @Input() percent_metadata!:number
+  @Input() article_data!: Articulo_Data
+  @Input() percent_metadata!: number
+  @Input() article_cvlac_html!: string
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
@@ -21,11 +23,9 @@ export class MetricsTableComponent implements OnInit {
   isContented(value: any): string {
     if (value === null || value === undefined || value === '') {
       return "No registra";
-    }else if(value == true){
+    } else if (value == true) {
       return "Registra"
     }
     return value
-    }
-
-
+  }
 }

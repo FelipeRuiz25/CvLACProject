@@ -1,79 +1,74 @@
 <div class="main_container">
-  <div class="container">
-    <div class="element_table">
-      <h1 class="text_table">Fecha Publicación: </h1>
-      <h1 class="text_table2">{{this.isContented(article_data['anio'])}} </h1>
-    </div>
-
-    <div class="element_table">
-      <h1 class="text_table">Doi: </h1>
-      <h1 class="text_table2">{{this.isContented(article_data['doi'])}}</h1>
-    </div>
-
-    <div class="element_table" >
-      <h1 class="text_table">Palabras Clave: </h1>
-      <h1 class="text_table2">{{this.isContented(article_data['palabras_claves'])}}</h1>
-    </div>
-
-    <div class="element_table" >
-      <h1 class="text_table">Issn ID: </h1>
-      <h1 class="text_table2">{{this.isContented(article_data['ISSN'])}} </h1>
-    </div>
-
-    <div class="element_table" >
-      <h1 class="text_table">Volumen: </h1>
-      <h1 class="text_table2">{{this.isContented(article_data['volumen'])}} </h1>
-    </div>
-
-    <div class="element_table" >
-      <h1 class="text_table">Autores: </h1>
-      <h1 class="text_table2">{{this.isContented(article_data['autores'])}} </h1>
-    </div>
-
-    <div class="element_table" >
-      <h1 class="text_table">Tipo Articulo: </h1>
-      <h1 class="text_table2">{{this.isContented(article_data['tipo_articulo'])}} </h1>
-    </div>
-
-    <div class="element_table" >
-      <h1 class="text_table">Revista editorial: </h1>
-      <h1 class="text_table2">{{this.isContented(article_data['nombre_revista'])}} </h1>
-    </div>
-
-    <div class="element_table" >
-      <h1 class="text_table">Marca Verificación: </h1>
-      <h1 class="text_table2">{{this.isContented(article_data['marca_verificacion'])}} </h1>
-    </div>
-
-    <div class="element_table">
-      <h1 class="text_table">Paginación: </h1>
-      <h1 class="text_table2">{{this.isContented(article_data['paginacion'])}} </h1>
-    </div>
-
-    <div class="element_table">
-      <h1 class="text_table">País: </h1>
-      <h1 class="text_table2">{{this.isContented(article_data['pais'])}} </h1>
-    </div>
-    
-    <div class="element_table">
-    <h1 class="text_table">Fascículo: </h1>
-      <h1 class="text_table2">{{this.isContented(article_data['fasciculo'])}} </h1>
-    </div>
-
+  <div class="view_container">
+    <h2 [ngClass]="{'bold-title': !cvlac_view}">Dublin core </h2>
+    <p-inputSwitch class="article_view_switch" [(ngModel)]="cvlac_view"></p-inputSwitch>
+    <h2 [ngClass]="{'bold-title': cvlac_view}">Vista en Cvlac</h2>
   </div>
 </div>
-<div class="sub_main_container">
+<div class="main_container">
+  <div style="display: flex;" *ngIf="cvlac_view else dublin_core_view" class="second_container"
+       [innerHTML]="article_cvlac_html"></div>
+  <ng-template #dublin_core_view>
+    <div class="second_container">
+      <p>
+        <b>Autores: </b>
+        {{this.isContented(article_data.autores)}}
+      </p>
+      <p>
+        <b>Año de publicación: </b>
+        {{this.isContented(article_data.anio)}}
+      </p>
+      <p>
+        <b>Idioma: </b>
+      </p>
+      <p>
+        <b>Tipo de recurso: </b>
+        {{this.isContented(article_data.tipo_articulo)}}
+      </p>
+      <p>
+        <b>Editorial: </b>
+        {{this.isContented(article_data.editorial_revista)}}
+      </p>
+      <p>
+        <b>Fuente: </b>
+        {{article_data.nombre_revista}} |
+        issn: {{article_data.ISSN}} |
+        vol. {{article_data.volumen}} |
+        fasc. {{article_data.fasciculo}} |
+        pag. {{article_data.pagina_inicio}} - {{article_data.pagina_fin}}
+      </p>
+      <p>
+        <b>Otro colaborador:</b> No se registra en CvLAC
+      </p>
+      <p>
+        <b>Formato: </b> No se registra en CvLAC
+      </p>
+      <p>
+        <b>Identificador DOI: </b>
+        <a href="https://www.doi.org/{{article_data.doi}}" target="_blank">
+          {{this.isContented(article_data.doi)}}
+        </a>
+      </p>
+      <p>
+        <b>Alcance: </b> No se registra en CvLAC
+      </p>
+      <p>
+        <b>Palabras clave: </b>
+        {{this.isContented(article_data.palabras_claves)}}
+      </p>
+      <p>
+        <b>Descripción: </b> No se registra en CvLAC
+      </p>
+    </div>
+  </ng-template>
+</div>
+<div class="sub_main_container" *ngIf="cvlac_view">
   <div class="info_container">
-    <h1>
-      Del artículo se obtuvo que contiene {{this.percent_metadata}} % de los 
+    <h4>
+      <i class="pi pi-info-circle" style="font-size: 1.2rem"></i>
+      El artículo contiene <b>{{this.percent_metadata}}%</b> de los
       metadatos posibles registrados en CvLAC.
-    </h1>
-    <br>
-    <h1>
-      A continuación encontrarás el puntaje alcanzado por el artículo "{{ article_data['Nombre'] }}" según la tabla de evaluación diseñada. 
-      Se recuerda que cada metadato registrado aportará un puntaje según la importancia dada, y que el cumplimiento de todos sumará un total 
-      de 15 puntos.
-    </h1>
+    </h4>
   </div>
-  
 </div>
+<p-divider type="dashed"></p-divider>

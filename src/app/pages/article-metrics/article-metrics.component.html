@@ -26,6 +26,7 @@
   </div>
 </div>
 <app-metrics-table [article_data]="article_data" [percent_metadata]="percent_metadata"
+                   [article_cvlac_html]="data['texto_original']"
                    *ngIf="isLoaded"></app-metrics-table>
 <app-puntuation-table [article_data]="article_data" *ngIf="isLoaded"></app-puntuation-table>
 <app-article-puntuation-chart [article_name]="this.article_name" *ngIf="isLoaded"></app-article-puntuation-chart>

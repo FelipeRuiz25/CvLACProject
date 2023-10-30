@@ -11,15 +11,15 @@ export class Articulo_Data {
   "tipo_articulo": string;
   "nombre_revista": boolean;
   "marca_verificacion": boolean;
-  "paginacion": boolean;
+  pagina_inicio: string;
+  pagina_fin: string;
   "pais": string;
   "fasciculo": string;
-  "valid_doi": any
-  "duplicated_doi": any
+  "valid_doi": any;
+  "duplicated_doi": any;
   editorial_revista: string;
   metadata_false = 0;
   metadata_true = 0;
-
 
   constructor(
     Nombre: string,
@@ -33,7 +33,8 @@ export class Articulo_Data {
     tipo_articulo: string,
     nombre_revista: boolean,
     marca_verificacion: boolean,
-    paginacion: boolean,
+    pagina_inicio: string,
+    pagina_fin: string,
     pais: string,
     fasciculo: string,
     valid_doi: any,
@@ -52,7 +53,8 @@ export class Articulo_Data {
     this.tipo_articulo = this.verify_atribute(tipo_articulo, "Tipo articulo");
     this.nombre_revista = this.verify_atribute(nombre_revista, "Editorial revista");
     this.marca_verificacion = this.verify_atribute(marca_verificacion, "Marca verificacion");
-    this.paginacion = this.verify_atribute(paginacion, "Paginación");
+    this.pagina_inicio = this.verify_atribute(pagina_inicio, "Pagina inicio");
+    this.pagina_fin = this.verify_atribute(pagina_fin, "Pagina final");
     this.pais = this.verify_atribute(pais, "Pais");
     this.fasciculo = this.verify_atribute(fasciculo, "Fascículo");
     this.valid_doi = valid_doi
@@ -92,10 +94,10 @@ export class Articulo_Data {
    * 2 Cumple con todos los metadatos esperados mencionados.
    */
   verify_source_puntuation(): 2 /*Cumple con todos*/ | 0 /*No cumple*/ | 1/*Cumple con algunos*/ {
-    if (this.verify_atribute_source(this.ISSN) || this.verify_atribute_source(this.nombre_revista) || this.verify_atribute_source(this.paginacion)
+    if (this.verify_atribute_source(this.ISSN) || this.verify_atribute_source(this.nombre_revista)
       || this.verify_atribute_source(this.volumen)) {
       return 2;
-    } else if (!this.verify_atribute_source(this.ISSN) && !this.verify_atribute_source(this.nombre_revista) && !this.verify_atribute_source(this.paginacion)
+    } else if (!this.verify_atribute_source(this.ISSN) && !this.verify_atribute_source(this.nombre_revista)
       && !this.verify_atribute_source(this.volumen)) {
       return 0;
     } else {
