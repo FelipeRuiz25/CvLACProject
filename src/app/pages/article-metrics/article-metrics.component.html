@@ -11,9 +11,16 @@
       </a>
     </p>
     <p-chip label="{{articleRating.total}}/100 Puntos" icon="pi pi-bookmark-fill"></p-chip>
-    <p-chip *ngIf="isVerified" label="Verificado" icon="pi pi-verified" tooltipPosition="right"
-            pTooltip="La información de este articulo es veraz y corresponde con los datos de Crossref"></p-chip>
-    <p-chip *ngIf="article_data['marca_verificacion']" label="Avalado" icon="pi pi-thumbs-up-fill" tooltipPosition="right"
+    <a href="https://www.doi.org/{{article_data['doi']}}" target="_blank">
+      <p-chip *ngIf="article_data['valid_doi']" label="DOI" icon="pi pi-check-circle" tooltipPosition="right"
+              pTooltip="Registrado en la base de datos de la DOI Foundation"></p-chip>
+    </a>
+    <a href="https://search.crossref.org/?from_ui=&q={{article_data['doi']}}" target="_blank">
+      <p-chip *ngIf="isVerified" label="Verificado" icon="pi pi-verified" tooltipPosition="right"
+              pTooltip="La información de este articulo es veraz y corresponde con los datos de Crossref"></p-chip>
+    </a>
+    <p-chip *ngIf="article_data['marca_verificacion']" label="Avalado" icon="pi pi-thumbs-up-fill"
+            tooltipPosition="right"
             pTooltip="Este articulo es un producto avalado y validado por la última Convocatoria Nacional para el Reconocimiento y Medición de Grupos de Investigación, Desarrollo Tecnológico o de Innovación y para el Reconocimiento de Investigadores del SNCTeI"
     ></p-chip>
   </div>
