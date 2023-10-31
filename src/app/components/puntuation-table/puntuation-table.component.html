@@ -1,111 +1,51 @@
+<div class="sub_main_container">
+  <div class="info_container">
+    <h1 style="font-weight: bold">
+      Calificación  {{article_rating.total}}/100
+    </h1>
+    Esta calificación se obtiene teniendo en cuenta los metadatos del articulo y su verificación, como se indica en la <b>tabla de puntuación
+    <a [routerLink]="['/about']">
+      <i class="pi pi-external-link" style="font-size: 1rem"></i>
+    </a>
+  </b>
+  </div>
+</div>
 <div class="main_container">
-    <div class="container">
-      <div class="element_table" [ngSwitch]="names_list_item_quality['Title']">
-        <h1 class="text_table">Titulo: </h1>
-        <img *ngSwitchCase="false" class="icon" src="./assets/hexagon-number-0.png" >
-        <img *ngSwitchCase="true" class="icon" src="./assets/hexagon-number-1.png">
+  <div class="second_container">
+    <div id="punctuation_card" *ngFor="let model of TABLE_MODEL" class="element_table">
+      <div class="element_table">
+        <!--on phone screens the score is at the top of the comment--->
+        <circle-progress class="phone-screen icon"
+                         [percent]="article_rating[model.fieldName]/model.totalPunctuation*100"
+                         [radius]="40"
+                         [space]="-4"
+                         [outerStrokeWidth]="4"
+                         [innerStrokeWidth]="4"
+                         [animation]="true"
+                         [title]="get_punctuation(model.fieldName)+'/'+model.totalPunctuation"
+                         [animationDuration]="600"
+        ></circle-progress>
+        <div class="text_table">
+          <h2>
+            <i class="hide-on-mobile pi {{model.iconName}}" style="font-size: 1.7rem"></i>
+            {{model.title}}
+          </h2>
+          <p style="margin-left: 5px" [innerHTML]="model.get_html_comment()"></p>
+        </div>
+        <!--on phone screens the score is on the right side of the comment-->
+        <circle-progress class="pc-screen icon"
+                         [percent]="article_rating[model.fieldName]/model.totalPunctuation*100"
+                         [radius]="40"
+                         [space]="-4"
+                         [outerStrokeWidth]="4"
+                         [innerStrokeWidth]="4"
+                         [animation]="true"
+                         [title]="get_punctuation(model.fieldName)+'/'+model.totalPunctuation"
+                         [animationDuration]="600"
+                         [titleFontSize]="'1.5rem'"
+        ></circle-progress>
       </div>
-      <div class="element_table" [ngSwitch]="names_list_item_quality['Date']">
-        <h1 class="text_table">Date: </h1>
-        <img *ngSwitchCase="false" class="icon" src="./assets/hexagon-number-0.png" >
-        <img *ngSwitchCase="true" class="icon" src="./assets/hexagon-number-1.png">
-      </div>
-      
-      <div class="element_table" [ngSwitch]="names_list_item_quality['Other Contribution']">
-        <h1 class="text_table">Other Contribution: </h1>
-        <img *ngSwitchCase="false" class="icon" src="./assets/hexagon-number-0.png" >
-        <img *ngSwitchCase="true" class="icon" src="./assets/hexagon-number-1.png">
-      </div>
-
-
-      <div class="element_table" [ngSwitch]="names_list_item_quality['Language']">
-        <h1 class="text_table">Lenguage: </h1>
-        <img *ngSwitchCase="false" class="icon" src="./assets/hexagon-number-0.png" >
-        <img *ngSwitchCase="true" class="icon" src="./assets/hexagon-number-1.png">
-      </div>
-
-      <div class="element_table" [ngSwitch]="names_list_item_quality['Verification mark']">
-        <h1 class="text_table">Marca Verificación: </h1>
-        <img *ngSwitchCase="false" class="icon" src="./assets/hexagon-number-0.png" >
-        <img *ngSwitchCase="true" class="icon" src="./assets/hexagon-number-1.png">
-      </div>
-
-
-      <div class="element_table" [ngSwitch]="names_list_item_quality['Format']">
-        <h1 class="text_table">Format: </h1>
-        <img *ngSwitchCase="false" class="icon" src="./assets/hexagon-number-0.png" >
-        <img *ngSwitchCase="true" class="icon" src="./assets/hexagon-number-1.png">
-      </div>
-  
-      <div class="element_table" [ngSwitch]="names_list_item_quality['Resource Identifier']">
-        <h1 class="text_table">Doi: </h1>
-        <img *ngSwitchCase="0" class="icon" src="./assets/hexagon-number-0.png">
-        <img *ngSwitchCase= "1" class="icon" src="./assets/hexagon-number-1.png">
-        <img *ngSwitchCase="2" class="icon" src="./assets/hexagon-number-2.png">
-        <img *ngSwitchCase="3" class="icon" src="./assets/hexagon-number-3.png">
-      </div>
-
-
-      <div class="element_table" [ngSwitch]="names_list_item_quality['Source']">
-        <h1 class="text_table">Source: </h1>
-        <img *ngSwitchCase="0" class="icon" src="./assets/hexagon-number-0.png">
-        <img *ngSwitchCase= "1" class="icon" src="./assets/hexagon-number-1.png">
-        <img *ngSwitchCase="2" class="icon" src="./assets/hexagon-number-2.png">
-        <img *ngSwitchCase="3" class="icon" src="./assets/hexagon-number-3.png">
-      </div>
-  
-      <div class="element_table" [ngSwitch]="names_list_item_quality['Subject and Keywords']">
-        <h1 class="text_table">Palabras Clave: </h1>
-        <img *ngSwitchCase="false" class="icon" src="./assets/hexagon-number-0.png">
-        <img *ngSwitchCase="true" class="icon" src="./assets/hexagon-number-1.png">
-      </div>
-  
-      <div class="element_table" [ngSwitch]="names_list_item_quality['Autor or Creator']">
-        <h1 class="text_table">Autor: </h1>
-        <img *ngSwitchCase="false" class="icon" src="./assets/hexagon-number-0.png">
-        <img *ngSwitchCase="true" class="icon" src="./assets/hexagon-number-1.png">
-      </div>
-  
-      <div class="element_table" [ngSwitch]="names_list_item_quality['Resource Type']">
-        <h1 class="text_table">Tipo Articulo: </h1>
-        <img *ngSwitchCase="false" class="icon" src="./assets/hexagon-number-0.png">
-        <img *ngSwitchCase="true" class="icon" src="./assets/hexagon-number-1.png">
-      </div>
-  
-      <div class="element_table" [ngSwitch]="names_list_item_quality['Publisher']" >
-        <h1 class="text_table">Publisher: </h1>
-        <img *ngSwitchCase="false" class="icon" src="./assets/hexagon-number-0.png">
-        <img *ngSwitchCase="true" class="icon" src="./assets/hexagon-number-1.png">
-      </div>
-
     </div>
   </div>
-  <div class="sub_main_container">
-    <div class="info_container">
-      <br>
-      <h1>
-        Como observamos, podemos visualizar los criterios de evaluación de los diferentes metadatos de cada artículo. 
-        Especificando la escala, tenemos:
-        <br>
-      </h1>
-      <div class="puntuation_table">
-        <h1 class="puntuation_table_item">Titutlo ( 0 no contiene, 1 contiene )</h1>
-        <h1 class="puntuation_table_item">Autores ( 0 no contiene, 1 contiene )</h1>
-        <h1 class="puntuation_table_item">Subject y Keywords ( 0 no contiene, 1 contiene )</h1>
-        <h1 class="puntuation_table_item">Publisher ( 0 no contiene, 1 contiene )</h1>
-        <h1 class="puntuation_table_item">Other Contributor ( 0 no contiene, 1 contiene )</h1>
-        <h1 class="puntuation_table_item">Date ( 0 no contiene, 1 contiene )</h1>
-        <h1 class="puntuation_table_item">Resource Type ( 0 no contiene, 1 contiene, 3 valido, 5 valido y unico)</h1>
-        <h1 class="puntuation_table_item">Source (ISSN, Volumen, Titulo, Pag incio y fin, Revista)( 0 no contiene, 1 contiene algunos, 2 todos)</h1>
-        <h1 class="puntuation_table_item">Language ( 0 no contiene, 1 contiene )</h1>
-        <h1 class="puntuation_table_item">Marca Verificación ( 0 no contiene, 1 contiene )</h1>
-      </div>
-      <h1 >       
-        Teniendo en cuenta lo anterior, obtenemos un puntaje de {{this.total_points}} sobre un total de 15 puntos.
-        Los ítems que no cumplieron con los requisitos fueron:{{this.items_uncompleted}}.
-      </h1>
-      <br><br><br><br>
-    </div>
-    
-  </div>
-  
+</div>
+<p-divider type="dashed"></p-divider>
