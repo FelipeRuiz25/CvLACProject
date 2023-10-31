@@ -1,151 +1,182 @@
-.main_container{
+.main_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.second_container {
+  width: 88%;
+  padding: 2%;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), radial-gradient(77.36% 256.97% at 77.36% 57.52%, #EFE1AF 0%, #C3DCFA 100%);
+  box-sizing: border-box;
+  border-radius: 30px;
+  border: 1px solid #c1c8cf;
+  overflow-y: auto;
+  gap: 10px;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.element_table {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #000000;
+  text-align: start;
+}
+
+#punctuation_card{
+  border: solid 2px #FFFFFF;
+  border-radius: 20px;
+  padding-top: 5px;
+}
+
+#punctuation_card:hover {
+  box-shadow: 2px 2px 5px 2px rgba(0,0,0,.1);
+}
+
+.icon {
+  width: 30%;
+  margin-left: 1rem;
+}
+
+img {
+  width: 70%;
+  float: right;
+}
+
+.text_table {
+  float: left;
+  width: 70%;
+  margin-left: 10px
+}
+
+.sub_main_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 40px
+}
+
+.info_container {
+  width: 90%;
+  font-family: "Inter";
+  font-size: 1.2rem;
+  color: #000000;
+  text-align: center;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+.puntuation_table {
+  display: grid;
+  width: 70%;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 20px;
+  text-align: center;
+  border: solid;
+  margin-left: 15%;
+  margin-bottom: 50px;
+}
+
+.puntuation_table_item {
+  font-size: 1.5rem;
+}
+
+.phone-screen {
+  display: none;
+}
+
+/* Estilos para pantallas de 768px o menos */
+@media (max-width: 768px) {
+  .main_container {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 90px;
+    margin-top: 60px;
   }
-  .container{
+
+  .second_container {
     width: 90%;
-    height: 600px;
-    background: #EEF0FE;
-    box-sizing: border-box;
+    height: auto;
     border-radius: 30px;
     overflow-y: auto;
-    margin-bottom: 30px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    
+    margin-bottom: 20px;
+    display: inline-block;
+    grid-template-columns: 1fr 1fr;
   }
-  
-  .element_table{
+
+  .element_table {
     font-family: "Inter";
     font-style: italic;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #000000;
     text-align: center;
-    display: flex;
+    display: block;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
   }
-  
-  
-  .icon{
-    width: 20%;
+
+  #punctuation_card{
+    margin-bottom: 10px;
   }
-  
-  img{
+
+  #punctuation_card:hover {}
+
+  .icon {
+    order: 1;
     width: 30%;
-    float: right;
   }
-  
-  .text_table{
-    float: left;
-    width: 70%;
+
+  img {
+    width: 50%;
+    float: none;
+    margin: 0 auto;
   }
-  
-  .sub_main_container{
+
+  .text_table {
+    float: none;
+    width: 100%;
+  }
+
+  .sub_main_container {
     width: 100%;
     display: flex;
     justify-content: center;
     text-align: center;
   }
-  
-  .info_container{
-    width: 80%;
+
+  .info_container {
+    width: 90%;
     font-family: "Inter";
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #000000;
     text-align: center;
     text-align: justify;
   }
-  
-  h1{
+
+  h1 {
     font-weight: 200;
-  }
-
-  .puntuation_table{
-    display: grid;
-    width: 70%;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 10px;
-    column-gap: 20px;
-    text-align: center;
-    border: solid;
-    margin-left: 15%;
-    margin-bottom: 50px;
-  }
-
-  .puntuation_table_item{
     font-size: 1.5rem;
-    
   }
-  
-  /* Estilos para pantallas de 768px o menos */
-  @media (max-width: 768px) {
-    .main_container {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin-top: 60px;
-    }
-    
-    .container {
-      width: 90%;
-      height: auto;
-      background: #EEF0FE;
-      border-radius: 30px;
-      overflow-y: auto;
-      margin-bottom: 20px;
-      display: block;
-      grid-template-columns: 1fr 1fr;
-    }
-    
-    .element_table {
-      font-family: "Inter";
-      font-style: italic;
-      font-weight: 400;
-      font-size: 0.8rem;
-      color: #000000;
-      text-align: center;
-      display: block;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .icon {
-      width: 30%;
-    }
-    
-    img {
-      width: 50%;
-      float: none;
-      margin: 0 auto;
-    }
-    
-    .text_table {
-      float: none;
-      width: 100%;
-    }
-    
-    .sub_main_container {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      text-align: center;
-    }
-    
-    .info_container {
-      width: 90%;
-      font-family: "Inter";
-      font-size: 1rem;
-      color: #000000;
-      text-align: center;
-      text-align: justify;
-    }
-    
-    h1 {
-      font-weight: 200;
-      font-size: 1.5rem;
-    }
+
+  .hide-on-mobile {
+    display: none;
   }
+
+  .pc-screen {
+    display: none;
+  }
+
+  .phone-screen {
+    display: inline-block;
+  }
+}

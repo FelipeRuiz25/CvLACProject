@@ -1,4 +1,7 @@
 export class ArticleRating {
+
+  [key: string]: any;
+
   constructor(
     public author: number,
     public coverage: number,
