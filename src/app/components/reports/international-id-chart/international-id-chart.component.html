@@ -1,7 +1,7 @@
 <h1 class="chart_title"*ngIf="isLoaded" >
     Número de artículos registrados por Base de datos Científica
   </h1>
-  <div class="chart_container2">
+  <div class="chart_container2" *ngIf="isLoaded">
     <div class="info_container">
         <div class="chart_container">
             <p-chart type="bar" [data]="basicData" [options]="basicOptions" class="char"></p-chart>
@@ -20,7 +20,9 @@
       permite adaptar servicios y políticas para satisfacer las necesidades de
       los investigadores en términos de identificación y reconocimiento.
     </h1>
-    <h1 class="title_chart2" *ngIf="!isLoaded">
-        Cargando información de las graficas ...
-    </h1>
   </div>
+
+  <div style="width: 100%; margin-top: 50px; margin-bottom: 20px; display: flex; justify-content: center;">
+    <div class="spinner-border" role="status" *ngIf="!isLoaded"></div>
+  </div>
+  <div><h1 class="loading_text"  *ngIf="!isLoaded">Cargando información...</h1></div>

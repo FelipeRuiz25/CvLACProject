@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Country_Report } from 'src/app/data_managment/country_report';
 import { DataManagerService } from 'src/app/data_managment/data-manager.service';
+import { StatsServiceService } from 'src/app/stats-service.service';
 
 @Component({
   selector: 'app-international-id-chart',
@@ -24,7 +25,7 @@ export class InternationalIdChartComponent implements OnInit {
 
  
   
-  constructor(private dataManagerService: DataManagerService) {  }
+  constructor(private dataManagerService: DataManagerService,private statsService: StatsServiceService) {  }
 
 
   set_chart(){
@@ -73,23 +74,47 @@ export class InternationalIdChartComponent implements OnInit {
 
   ngOnInit(): void {
     try {
-      this.dataManagerService
-        .getCountriesReportData(this.url_get_countries_report)
-        .subscribe((report) => {
-          this.data = report;
-          this.countries_name_list = Object.keys(this.data);
-          this.countries_name_list.forEach(country => {
-            this.get_top_international_id(country);
-          });
-          this.top_international_id.forEach(top_international_id_name => {
-            this.get_data_from_international_id(top_international_id_name)
-          });
-          this.isLoaded = true;
-          this.set_chart()
-        });
+      if(this.statsService.internationalIdChartLoaded == undefined){
+        this.load_data()
+      }else{
+        this.data_loaded()
+      }
+           
     } catch (error) {
-      
+
     }
+}
+
+  load_data(){
+    this.dataManagerService
+    .getCountriesReportData(this.url_get_countries_report)
+    .subscribe((report) => {
+      this.data = report;
+      this.statsService.internationalIdChartLoaded = report
+      this.countries_name_list = Object.keys(this.data);
+      this.countries_name_list.forEach(country => {
+        this.get_top_international_id(country);
+      });
+      this.top_international_id.forEach(top_international_id_name => {
+        this.get_data_from_international_id(top_international_id_name)
+      });
+      this.isLoaded = true;
+      this.set_chart()
+    });
+  }
+
+  data_loaded(){
+    this.data = this.statsService.internationalIdChartLoaded;
+    this.statsService.internationalIdChartLoaded = this.data
+    this.countries_name_list = Object.keys(this.data);
+    this.countries_name_list.forEach(country => {
+      this.get_top_international_id(country);
+    });
+    this.top_international_id.forEach(top_international_id_name => {
+      this.get_data_from_international_id(top_international_id_name)
+    });
+    this.isLoaded = true;
+    this.set_chart()
   }
 
 

@@ -1,7 +1,7 @@
 
   .chart_container {
     margin-top: 30px;
-    width: 80%;
+    width: 90%;
     height: 500px;
     
   }
@@ -14,12 +14,11 @@
   .chart_title {
     font-family: "Inter";
     font-style: italic;
-    font-weight: 400;
-    font-size: 2rem;
+    font-weight: 800;
+    font-size: 1.7rem;
     color: #000;
     text-align: center;
-    width: 100%;
-    margin-top: 20px;
+    margin-bottom: 50px;
   }
   
   .header_title{
@@ -64,12 +63,12 @@
   
   .title_chart_radar{
     float: left;
-    width: 40%;
+    width: 60%;
     margin: 0;
     font-family: "Inter";
     font-style: italic;
-    font-weight: 400;
-    font-size: 1.5rem;
+    font-weight: 800;
+    font-size: 1.3rem;
     color: #000;
     text-align: justify;
     line-height: 35px;
@@ -90,6 +89,16 @@
     line-height: 35px;
   
   }
+
+
+  .loading_text{
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.2 rem;
+    color: #000000;
+    text-align: center;
+  }
   
   @media (max-width: 768px) {
   
@@ -97,11 +106,14 @@
       font-family: "Inter";
       font-style: italic;
       font-weight: 400;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       color: #000;
       text-align: center;
     }
-    
+    .loading_text{
+      font-size: 1.2rem;
+    }
+
     .header_title {
       font-family: "Inter";
       font-style: italic;
@@ -142,7 +154,7 @@
       font-family: "Inter";
       font-style: italic;
       font-weight: 400;
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: #000;
       text-align: justify;
     }

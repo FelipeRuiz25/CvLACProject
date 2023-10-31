@@ -11,6 +11,16 @@
     height: 100%;
   }
 
+  .loading_text{
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.2 rem;
+    color: #000000;
+    text-align: center;
+  }
+
+
   
   h1 {
     margin: 0;
@@ -22,16 +32,14 @@
     text-align: center;
   }
 
-
   .chart_title {
     font-family: "Inter";
     font-style: italic;
-    font-weight: 400;
-    font-size: 2rem;
+    font-weight: 800;
+    font-size: 1.7rem;
     color: #000;
     text-align: center;
-    margin-top: 30px;
-
+    margin-bottom: 50px;
   }
   
   .header_title{
@@ -81,7 +89,7 @@
     font-family: "Inter";
     font-style: italic;
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #000;
     text-align: justify;
     line-height: 35px;
@@ -95,12 +103,12 @@
     font-family: "Inter";
     font-style: italic;
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #000;
     text-align: justify;
     padding-left: 30px;
     line-height: 35px;
-  
+    margin-bottom: 20px;
   }
 
   .title_chart2 {
@@ -120,11 +128,15 @@
       font-family: "Inter";
       font-style: italic;
       font-weight: 400;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       color: #000;
       text-align: center;
       margin-top: 30px;
 
+    }
+
+    .loading_text{
+      font-size: 1.2rem;
     }
     
     .header_title {
