@@ -1,8 +1,15 @@
-<div class="main_container">
+<div class="main_container pc-view">
   <div class="view_container">
     <h2 [ngClass]="{'bold-title': !cvlac_view}">Dublin core </h2>
     <p-inputSwitch class="article_view_switch" [(ngModel)]="cvlac_view"></p-inputSwitch>
     <h2 [ngClass]="{'bold-title': cvlac_view}">Vista en Cvlac</h2>
+  </div>
+</div>
+<div class="main_container phone-view">
+  <div class="view_container">
+    <h2 *ngIf="!cvlac_view" [ngClass]="{'bold-title': !cvlac_view}">Dublin core</h2>
+    <h2 *ngIf="cvlac_view" [ngClass]="{'bold-title': cvlac_view}">Vista en Cvlac</h2>
+    <p-inputSwitch class="article_view_switch" [(ngModel)]="cvlac_view"></p-inputSwitch>
   </div>
 </div>
 <div class="main_container">
@@ -10,55 +17,60 @@
        [innerHTML]="article_cvlac_html"></div>
   <ng-template #dublin_core_view>
     <div class="second_container">
-      <p>
-        <b>Autores: </b>
-        {{this.isContented(article_data.autores)}}
-      </p>
-      <p>
-        <b>Año de publicación: </b>
-        {{this.isContented(article_data.anio)}}
-      </p>
-      <p>
-        <b>Idioma: </b>
-      </p>
-      <p>
-        <b>Tipo de recurso: </b>
-        {{this.isContented(article_data.tipo_articulo)}}
-      </p>
-      <p>
-        <b>Editorial: </b>
-        {{this.isContented(article_data.editorial_revista)}}
-      </p>
-      <p>
-        <b>Fuente: </b>
-        {{article_data.nombre_revista}} |
-        issn: {{article_data.ISSN}} |
-        vol. {{article_data.volumen}} |
-        fasc. {{article_data.fasciculo}} |
-        pag. {{article_data.pagina_inicio}} - {{article_data.pagina_fin}}
-      </p>
-      <p>
-        <b>Otro colaborador:</b> No se registra en CvLAC
-      </p>
-      <p>
-        <b>Formato: </b> No se registra en CvLAC
-      </p>
-      <p>
-        <b>Identificador DOI: </b>
-        <a href="https://www.doi.org/{{article_data.doi}}" target="_blank">
-          {{this.isContented(article_data.doi)}}
-        </a>
-      </p>
-      <p>
-        <b>Alcance: </b> No se registra en CvLAC
-      </p>
-      <p>
-        <b>Palabras clave: </b>
-        {{this.isContented(article_data.palabras_claves)}}
-      </p>
-      <p>
-        <b>Descripción: </b> No se registra en CvLAC
-      </p>
+      <div>
+        <h3>Autores </h3>
+        <p>{{article_data.autores}}</p>
+      </div>
+      <div>
+        <h3>Año de publicación </h3>
+        <p>{{article_data.anio}}</p>
+      </div>
+      <div>
+        <h3>Idioma </h3>
+        <p>No se puede recuperar de CvLAC</p>
+      </div>
+      <div>
+        <h3>Tipo de recurso </h3>
+        <p>{{article_data.tipo_articulo}}</p>
+      </div>
+      <div>
+        <h3>Editorial </h3>
+        <p>{{article_data.editorial_revista}}</p>
+      </div>
+      <div>
+        <h3>Fuente </h3>
+        <p>
+          {{article_data.nombre_revista}} |
+          issn: {{article_data.ISSN}} |
+          vol. {{article_data.volumen}} |
+          fasc. {{article_data.fasciculo}} |
+          pag. {{article_data.pagina_inicio}} - {{article_data.pagina_fin}}
+        </p>
+      </div>
+      <div>
+        <h3>Otro colaborador</h3><p>No se registra en CvLAC</p>
+      </div>
+      <div>
+        <h3>Formato </h3><p>No se registra en CvLAC</p>
+      </div>
+      <div>
+        <h3>Identificador DOI </h3>
+        <div>
+          <a href="https://www.doi.org/{{article_data.doi}}" target="_blank">
+            {{article_data.doi}}
+          </a>
+        </div>
+      </div>
+      <div>
+        <h3>Alcance </h3><p>No se registra en CvLAC</p>
+      </div>
+      <div>
+        <h3>Palabras clave </h3>
+        <p>{{article_data.palabras_claves}}</p>
+      </div>
+      <div>
+        <h3>Descripción </h3><p>No se registra en CvLAC</p>
+      </div>
     </div>
   </ng-template>
 </div>

@@ -7,7 +7,7 @@
   background-color: #FFFFFF;
   border: 1px solid #e2eaf2;
   border-radius: 12px;
-  padding: 0.5rem;
+  padding: 0.5rem 2rem;
 }
 
 .view_container h2 {
@@ -33,7 +33,7 @@
   display: grid;
   font-size: 1.2rem;
   grid-template-columns: repeat(2, 1fr);
-  row-gap: 5px;
+  row-gap: 2px;
   background-color: #FFFFFF;
   border: 1px solid #e2eaf2;
   border-radius: 12px;
@@ -50,7 +50,7 @@
   background: #232659;
 }
 
-.second_container b{
+.second_container h3{
   color: #757575;
 }
 
@@ -107,19 +107,21 @@ h1{
   font-weight: 200;
 }
 
+.phone-view{
+  display: none;
+}
+
 /* Estilos para pantallas de 768px o menos */
 @media (max-width: 768px) {
   .main_container {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 60px;
   }
 
   .second_container {
     width: 90%;
     height: auto;
-    background: #EEF0FE;
     border-radius: 30px;
     overflow-y: auto;
     margin-bottom: 20px;
@@ -173,5 +175,13 @@ h1{
   h1 {
     font-weight: 200;
     font-size: 1.5rem;
+  }
+
+  .pc-view {
+    display: none;
+  }
+
+  .phone-view {
+    display: flex;
   }
 }

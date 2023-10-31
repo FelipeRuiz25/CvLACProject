@@ -17,15 +17,6 @@ export class MetricsTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
-
-
-  isContented(value: any): string {
-    if (value === null || value === undefined || value === '') {
-      return "No registra";
-    } else if (value == true) {
-      return "Registra"
-    }
-    return value
+    console.log(this.article_data)
   }
 }
