@@ -16,7 +16,7 @@ export class StatsComponent {
   constructor() {
       this.stats = [
         {name: 'Analísis por identificadores'},
-        {name: 'Analísis por países'},
+        {name: 'Analísis para Colombia'},
         {name: 'Analísis por metadatos'},
       ];
   }

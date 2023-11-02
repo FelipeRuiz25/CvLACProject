@@ -52,9 +52,8 @@ export class CountriesChartComponent implements OnInit {
             this.statsService.countriesChartLoaded = report
             this.countries_name_list = Object.keys(this.data);
               this.get_top_international_id("colombiana");
-            this.top_international_id.forEach(top_international_id_name => {
-              this.get_data_from_international_id(top_international_id_name)
-            });
+            console.log("YYY",this.international_id_by_country_sorted);
+            
             this.isLoaded = true;
             this.set_graphics()  
           }); 
@@ -63,7 +62,7 @@ export class CountriesChartComponent implements OnInit {
   data_loaded(){
     this.data = this.statsService.countriesChartLoaded;
     this.countries_name_list = Object.keys(this.data);
-      this.get_top_international_id("colombiana");
+    this.get_top_international_id("colombiana");
     this.top_international_id.forEach(top_international_id_name => {
       this.get_data_from_international_id(top_international_id_name)
     });
@@ -85,24 +84,6 @@ export class CountriesChartComponent implements OnInit {
     return data
   }
 
-  /**
-   * Retorna informacion del id de un pais en especifico y un id en especifico
-   */
-  get_data_from_country(name_id_international:string,country_name_list:string):number{
-    let data:number[] = []
-    let res:number = -1
-    this.international_id_by_country_sorted.forEach(country_reports => {
-      for (let i = 0; i < country_reports.get_list_internationa_id().length; i++) {
-        if(country_reports.get_country_name() == country_name_list ){
-          if(this.extract_domain_name(country_reports.get_list_internationa_id()[i][0]) == name_id_international){
-            res = country_reports.get_list_internationa_id()[i][1]
-            break;
-          }
-        }
-      }     
-    });
-    return res;
-  }
 
   /**
    * Recorre el arreglo de todos los apises y almacena las bases de datos internacionales
@@ -114,24 +95,26 @@ export class CountriesChartComponent implements OnInit {
   }
 
   set_graphics() {
+    console.log("PPPP" , this.international_id_by_country_sorted[0].get_list_internationa_id()[0][1]);
+    
     this.basicData = {
       labels: ["Colombia"],
       datasets: [
         {
-          label: this.top_international_id[0],
-          data: this.get_data_from_international_id(this.top_international_id[0])
+          label: this.extract_domain_name(this.international_id_by_country_sorted[0].get_list_internationa_id()[0][0]),
+          data: [this.international_id_by_country_sorted[0].get_list_internationa_id()[0][1]]
         },
         {
-          label: this.top_international_id[1],
-          data: this.get_data_from_international_id(this.top_international_id[1])
+          label:this.extract_domain_name(this.international_id_by_country_sorted[0].get_list_internationa_id()[1][0]),
+          data: [this.international_id_by_country_sorted[0].get_list_internationa_id()[1][1]]
         },
         {
-          label: this.top_international_id[2],
-          data: this.get_data_from_international_id(this.top_international_id[2])
+          label: this.extract_domain_name(this.international_id_by_country_sorted[0].get_list_internationa_id()[2][0]),
+          data: [this.international_id_by_country_sorted[0].get_list_internationa_id()[2][1]]
         },
         {
-          label: this.top_international_id[3],
-          data: this.get_data_from_international_id(this.top_international_id[3])
+          label: this.extract_domain_name(this.international_id_by_country_sorted[0].get_list_internationa_id()[3][0]),
+          data: [this.international_id_by_country_sorted[0].get_list_internationa_id()[3][1]]
         },
       ],
     };
@@ -200,7 +183,6 @@ export class CountriesChartComponent implements OnInit {
       top_list = sortedData;
     }
     this.international_id_by_country_sorted.push(new Country_Report(country_name,top_list))
-    // console.log(this.international_id_by_country_sorted)
     // console.log(this.top_international_id)
 
   }

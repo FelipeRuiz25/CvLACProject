@@ -32,16 +32,16 @@ export class InternationalIdChartComponent implements OnInit {
   set_chart(){
     let top_1 = [this.sortedData[0][0],this.sortedData[0][1]]
     let top_2 = [this.sortedData[1][0],this.sortedData[1][1]]
-    let top_3 = [this.sortedData[2][0],this.sortedData[2][1]]
-    let top_4 = [this.sortedData[3][0],this.sortedData[3][1]]
-    let others = [this.sortedData[4][0],this.sortedData[4][1]]
+    let top_3 = [this.sortedData[3][0],this.sortedData[3][1]]
+    let top_4 = [this.sortedData[4][0],this.sortedData[4][1]]
+    let others = [this.sortedData[2][0],this.sortedData[2][1]]
 
     this.basicData = {
       labels: [top_1[0], top_2[0], top_3[0], top_4[0],others[0]],
       datasets: [
         {
           label: 'Cantidad identificadores internacionales registrados',
-          data: [top_1[1], top_2[1], top_3[1], top_3[1], others[1]]
+          data: [top_1[1], top_2[1], top_3[1], top_4[1], others[1]]
         }
       ]
     };
@@ -107,7 +107,6 @@ export class InternationalIdChartComponent implements OnInit {
         (a: any, b: any) => b[1] - a[1]
       );  
       this.isLoaded = true;
-      console.log("top" , this.sortedData);
       this.set_chart()
     });
   }
@@ -123,6 +122,10 @@ export class InternationalIdChartComponent implements OnInit {
     this.top_international_id.forEach(top_international_id_name => {
       top_data[top_international_id_name] = this.get_data_from_international_id(top_international_id_name)
     });
+    top_data['Other'] = this.get_data_from_international_id("Other") //añade el item Others 
+    this.sortedData = Object.entries(top_data).sort(
+      (a: any, b: any) => b[1] - a[1]
+    );  
     this.isLoaded = true;
     this.set_chart()
   }
