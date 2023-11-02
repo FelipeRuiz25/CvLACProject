@@ -18,6 +18,7 @@ export class InternationalIdChartComponent implements OnInit {
   international_id_by_country_sorted:Country_Report[] = []
   top_international_id: string[] = [];
   isLoaded = false;
+  sortedData:any
 
 
 
@@ -29,16 +30,18 @@ export class InternationalIdChartComponent implements OnInit {
 
 
   set_chart(){
-    let orcid = [this.top_international_id[0],this.get_data_from_international_id(this.top_international_id[0])]
-    let scopus =[this.top_international_id[1],this.get_data_from_international_id(this.top_international_id[1])]
-    let webOfScience = ["ResearcherId",2063]
-    let others = ["Otros",1921]
+    let top_1 = [this.sortedData[0][0],this.sortedData[0][1]]
+    let top_2 = [this.sortedData[1][0],this.sortedData[1][1]]
+    let top_3 = [this.sortedData[2][0],this.sortedData[2][1]]
+    let top_4 = [this.sortedData[3][0],this.sortedData[3][1]]
+    let others = [this.sortedData[4][0],this.sortedData[4][1]]
+
     this.basicData = {
-      labels: [orcid[0], scopus[0], webOfScience[0], others[0]],
+      labels: [top_1[0], top_2[0], top_3[0], top_4[0],others[0]],
       datasets: [
         {
           label: 'Cantidad identificadores internacionales registrados',
-          data: [orcid[1], scopus[1], webOfScience[1], others[1]]
+          data: [top_1[1], top_2[1], top_3[1], top_3[1], others[1]]
         }
       ]
     };
@@ -89,29 +92,36 @@ export class InternationalIdChartComponent implements OnInit {
     this.dataManagerService
     .getCountriesReportData(this.url_get_countries_report)
     .subscribe((report) => {
-      this.data = report;
+      this.data = report;      
       this.statsService.internationalIdChartLoaded = report
       this.countries_name_list = Object.keys(this.data);
       this.countries_name_list.forEach(country => {
         this.get_top_international_id(country);
       });
+      const top_data:any = {}
       this.top_international_id.forEach(top_international_id_name => {
-        this.get_data_from_international_id(top_international_id_name)
+        top_data[top_international_id_name] = this.get_data_from_international_id(top_international_id_name)
       });
+      top_data['Other'] = this.get_data_from_international_id("Other") //añade el item Others 
+      this.sortedData = Object.entries(top_data).sort(
+        (a: any, b: any) => b[1] - a[1]
+      );  
       this.isLoaded = true;
+      console.log("top" , this.sortedData);
       this.set_chart()
     });
   }
 
   data_loaded(){
     this.data = this.statsService.internationalIdChartLoaded;
-    this.statsService.internationalIdChartLoaded = this.data
+    this.statsService.internationalIdChartLoaded = this.data    
     this.countries_name_list = Object.keys(this.data);
     this.countries_name_list.forEach(country => {
       this.get_top_international_id(country);
     });
+    const top_data:any = {}
     this.top_international_id.forEach(top_international_id_name => {
-      this.get_data_from_international_id(top_international_id_name)
+      top_data[top_international_id_name] = this.get_data_from_international_id(top_international_id_name)
     });
     this.isLoaded = true;
     this.set_chart()
@@ -133,8 +143,8 @@ export class InternationalIdChartComponent implements OnInit {
     let international_id_by_country = this.data[country_name];
     const sortedData = Object.entries(international_id_by_country).sort(
       (a: any, b: any) => b[1] - a[1]
-    );
-    let result!: any;
+    );    
+  let result!: any;
     // Agrupar el resto de las llaves en el item "Other" y sumar sus valores
     if (sortedData.length > top_length) {
       for (let i = 0; i < sortedData.length; i++) {
@@ -152,8 +162,9 @@ export class InternationalIdChartComponent implements OnInit {
       top_list[top_length] = ['Other', count_others];
     } else {
       top_list = sortedData;
-    }
+    }    
     this.international_id_by_country_sorted.push(new Country_Report(country_name,top_list))
+    // console.log(country_name,this.international_id_by_country_sorted);
 
   }
 
