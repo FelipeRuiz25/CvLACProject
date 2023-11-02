@@ -105,7 +105,7 @@
 /* ... Otros estilos ... */
 
 /* Estilos para la versión móvil (menos de 950px) */
-@media (max-width: 400px) {
+@media (max-width: 280px) {
   .header_container {
     width: 100%;
     grid-template-columns: 1fr; /* Cambia a una sola columna */

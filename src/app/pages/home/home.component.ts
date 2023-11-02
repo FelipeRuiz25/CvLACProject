@@ -28,6 +28,10 @@ export class HomeComponent implements OnInit{
  constructor() {
  }
 
+ redirectTo(route:string): void {
+  const url = "/" + route
+  window.location.href = url;
+}
 
   ngOnInit(): void {
 

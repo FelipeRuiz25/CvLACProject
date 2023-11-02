@@ -33,6 +33,7 @@ export class InvestigatorCvComponent implements OnInit {
     this.url_id_cv = this.currentRouter.url
     this.dataManagerService.getArticlesByAuthor(this.url_get_authors_articles + this.route.snapshot.params['id']).subscribe(investigator => {
       this.investigator = new Investigator_Cv(investigator.Nombre,investigator.Categoria, investigator.Articulos)
+      console.log("ESTE ES EL INVESTOGATOR", this.investigator.Articulos.length)
       this.isLoaded = true;
     });
   }
