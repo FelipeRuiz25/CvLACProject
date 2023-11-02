@@ -21,3 +21,8 @@
       identificación general de los datos.
     </h1>
   </div>
+
+  <div style="width: 100%; margin-top: 50px; margin-bottom: 20px; display: flex; justify-content: center;">
+    <div class="spinner-border" role="status" *ngIf="!isLoaded"></div>
+  </div>
+  <div><h1 class="loading_text"  *ngIf="!isLoaded">Cargando información...</h1></div>

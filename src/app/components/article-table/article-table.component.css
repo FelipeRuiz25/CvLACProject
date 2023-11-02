@@ -6,7 +6,7 @@
 
 .container{
   width: 80%;
-  height: 400px;
+  height: 500px;
   background: #EEF0FE;
   border: 2px solid #000000;
   box-sizing: border-box;
@@ -26,19 +26,9 @@
   padding-bottom: 15px;
   border-bottom: 2px solid black;
   column-gap: 20px;
-  position: sticky;
-  top: 0;
-  background-color: #EEF0FE; /* Ajusta el color de fondo según tu diseño */
-  z-index: 1; /* Asegura que esté sobre el contenido desplazable */
 
 }
 
-.box:first-child {
-  position: sticky;
-  left: 0;
-  background-color: #EEF0FE;
-  z-index: 2;
-}
 
 .box_elements {
   font-family: "Inter";
@@ -62,10 +52,18 @@
   color: #000000;
 }
 
-button{
-  background-color: transparent;
-  border: none;
+.button_metrics {
+  border: none; /* Color del borde del botón */
+  color: #242853; /* Color del texto del botón */
+  transition: background-color 0.3s; /* Transición suave para el color de fondo */
+  border-left: 50px;
 }
+
+.button_metrics:hover {
+  background-color: #242853; /* Color de fondo en hover */
+  color: #fff; /* Cambia el color del texto cuando el cursor está sobre el botón */
+}
+
 
 
 img {
@@ -79,6 +77,10 @@ img {
     overflow: auto;
   }
 
+  .button_metrics {
+    height: 80%;
+    width: 80%;
+  }
   .table_header,
   .box_elements {
     font-size: 0.8rem;
@@ -88,6 +90,8 @@ img {
   hr{
     width: 100%;
   }
+
+
 
 }
 

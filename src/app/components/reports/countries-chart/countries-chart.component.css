@@ -7,11 +7,22 @@
   .chart_title {
     font-family: "Inter";
     font-style: italic;
-    font-weight: 400;
-    font-size: 2rem;
+    font-weight: 800;
+    font-size: 1.7rem;
     color: #000;
     text-align: center;
+    margin-bottom: 50px;
   }
+  .loading_text{
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.2 rem;
+    color: #000000;
+    text-align: center;
+  }
+
+
   
   .chart_container2 {
     display: flex;
@@ -37,11 +48,13 @@
   font-family: "Inter";
   font-style: italic;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #000;
   text-align: justify;
   padding-left: 30px;
   line-height: 35px;
+  margin-bottom: 20px;
+
 
 }
   
@@ -52,7 +65,7 @@
   font-family: "Inter";
   font-style: italic;
   font-weight: 400;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   color: #000;
   text-align: center;
 }
@@ -63,7 +76,7 @@
       font-family: "Inter";
       font-style: italic;
       font-weight: 400;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       color: #000;
       text-align: center;
     }
@@ -97,7 +110,7 @@
       margin-left: -35px;
       font-family: "Inter";
       font-style: italic;
-      font-weight: 400;
+      font-weight: 800;
       font-size: 1rem;
       color: #000;
       text-align: justify;
@@ -110,8 +123,12 @@
       font-family: "Inter";
       font-style: italic;
       font-weight: 400;
-      font-size: .8rem;
+      font-size: 1rem;
       color: #000;
       text-align: center;
+    }
+
+    .loading_text{
+      font-size: 1.2rem;
     }
   }

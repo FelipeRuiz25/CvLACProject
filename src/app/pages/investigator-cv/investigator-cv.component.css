@@ -65,36 +65,36 @@ h5.subtitle{
 @media (max-width: 768px) {
     .subtitle {
       margin-top: 10px;
-      font-size: 1.2rem;
+      font-size: 0.2rem;
       padding-left: 10px;
     }
     
     h1.subtitle {
       text-align: center;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       margin-bottom: 40px;
       margin-top: 30px;
     }
     
     h2.subtitle {
-      font-size: 1.8rem;
+      font-size: 1.1rem;
       font-weight: 600;
     }
     
     h3.subtitle {
       text-align: center;
-      font-size: 2rem;
+      font-size: 1.2rem;
     }
     
     h4.subtitle {
       text-align: center;
-      font-size: 1.2rem;
+      font-size: 1.0rem;
       font-weight: 600;
     }
     
     h5.subtitle {
       text-align: center;
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
     
     .item {

@@ -11,7 +11,10 @@
                 <h2 class="box_elements">{{ article.nombre_articulo }}</h2>
                 <h2 class="box_elements">{{ article.autores }}</h2>
                 <h2 class="box_elements">{{ article.doi}}</h2>    
-                <button type="image" (click)="redirectToArticleData(article.index)"><img src="./assets/cube.png"></button>           
+                <button type="button" class="btn btn-outline-danger button_metrics" (click)="redirectToArticleData(article.index)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16"></svg>
+                    Ver más
+                </button>
         </div>
     </div>
 </div>

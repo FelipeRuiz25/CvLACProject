@@ -2,8 +2,10 @@
 
 <div class="container">
   <div class="main_container">
-    <app-international-id-chart></app-international-id-chart>
-    <app-countries-chart></app-countries-chart>
-    <app-radar-article-chart></app-radar-article-chart>
+    <h1 class="text" style="margin-top: 50px;">A continuación encontrarás los reportes obtenidos en el análisis del sistema, selecciona alguno de los siguientes</h1>
+    <div style="display: flex; justify-content: center; margin-top: 50px; margin-bottom: 50px;font-size: 50px;"><p-dropdown [options]="stats" [(ngModel)]="selectedStat" optionLabel="name" class="text-3xl"></p-dropdown></div>
+    <app-international-id-chart *ngIf="selectedStat == stats[0]"></app-international-id-chart>
+    <app-countries-chart *ngIf="selectedStat == stats[1]"></app-countries-chart>
+    <app-radar-article-chart *ngIf="selectedStat == stats[2]"></app-radar-article-chart>
   </div>
 </div>

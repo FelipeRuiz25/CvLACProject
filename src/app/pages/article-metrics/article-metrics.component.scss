@@ -2,18 +2,19 @@
     margin-top: 20px;
     font-family: "Inter";
     font-style: italic;
-    font-weight: 400;
     color: #000;
+    font-size: 1.8rem;
     padding-left: 15px;
+    font-weight: 400;
+    text-align: center;
 }
 .subtitle2 {
     margin-top: 20px;
     font-family: "Inter";
     font-style: italic;
-    font-weight: 400;
+    font-weight: 200;
     color: #000;
-    padding-left: 15px;
-    font-size: 40px;
+    font-size: 1.4rem;
     width: 95%;
     padding-left: 3%;
 }
@@ -38,6 +39,7 @@ h1.subtitle{
     font-weight: 400;
     display: flex;
     align-items: center;
+    margin-left: 10px;
 }
 
 .main_container{

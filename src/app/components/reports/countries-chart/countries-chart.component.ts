@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataManagerService } from 'src/app/data_managment/data-manager.service';
 import { ActivatedRoute } from '@angular/router';
 import { Country_Report } from 'src/app/data_managment/country_report';
+import { StatsServiceService } from 'src/app/stats-service.service';
 
 @Component({
   selector: 'app-countries-chart',
@@ -22,7 +23,7 @@ export class CountriesChartComponent implements OnInit {
 
 
 
-  constructor(private dataManagerService: DataManagerService) {
+  constructor(private dataManagerService: DataManagerService ,private statsService: StatsServiceService) {
     if(this.isLoaded){
       this.set_graphics()
     } 
@@ -30,22 +31,45 @@ export class CountriesChartComponent implements OnInit {
 
 
   ngOnInit(): void {
-    try {
-      this.dataManagerService
-        .getCountriesReportData(this.url_get_countries_report)
-        .subscribe((report) => {
-          this.data = report;
-          this.countries_name_list = Object.keys(this.data);
-            this.get_top_international_id("colombiana");
-          this.top_international_id.forEach(top_international_id_name => {
-            this.get_data_from_international_id(top_international_id_name)
-          });
-          this.isLoaded = true;
-          this.set_graphics()  
-        });      
-    } catch (error) {
-      
-    }
+      try {
+        if(this.statsService.countriesChartLoaded == undefined){
+          this.load_data()
+        }else{
+          this.data_loaded()
+        }
+             
+      } catch (error) {
+        
+      }
+    
+  }
+
+  load_data(){
+    this.dataManagerService
+          .getCountriesReportData(this.url_get_countries_report)
+          .subscribe((report) => {
+            this.data = report;
+            this.statsService.countriesChartLoaded = report
+            this.countries_name_list = Object.keys(this.data);
+              this.get_top_international_id("colombiana");
+            this.top_international_id.forEach(top_international_id_name => {
+              this.get_data_from_international_id(top_international_id_name)
+            });
+            this.isLoaded = true;
+            this.set_graphics()  
+          }); 
+  }
+
+  data_loaded(){
+    this.data = this.statsService.countriesChartLoaded;
+    this.countries_name_list = Object.keys(this.data);
+      this.get_top_international_id("colombiana");
+    this.top_international_id.forEach(top_international_id_name => {
+      this.get_data_from_international_id(top_international_id_name)
+    });
+    this.isLoaded = true;
+    this.set_graphics()  
+
   }
 
 

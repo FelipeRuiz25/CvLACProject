@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataManagerService } from 'src/app/data_managment/data-manager.service';
+import { StatsServiceService } from 'src/app/stats-service.service';
 
 
 @Component({
@@ -20,13 +21,27 @@ export class RadarArticleChartComponent  {
   top_metadata_used:string[] = [] 
   less_metadata_used :string[] = [] 
 
-  constructor(private dataManagerService: DataManagerService) {
+  constructor(private dataManagerService: DataManagerService, private statsServices: StatsServiceService) {
 
   }
 
   ngOnInit(): void {
+    try {
+      if(this.statsServices.radarArticleChartLoaded == undefined){
+        this.load_data()
+      }else{
+        this.data_loaded()
+      }
+           
+    } catch (error) {
+
+    }
+}
+
+  load_data(){
     this.dataManagerService.getArticlesData(this.url_radar_metadata_report)
     .subscribe(report_global_puntuation => {
+      this.statsServices.radarArticleChartLoaded = report_global_puntuation
       if(report_global_puntuation != undefined){
         Object.keys(report_global_puntuation).forEach(key_name => {
           this.get_total_count_metadata(key_name,report_global_puntuation);
@@ -39,6 +54,17 @@ export class RadarArticleChartComponent  {
     });
   }
 
+  data_loaded(){
+    let report_global_puntuation = this.statsServices.radarArticleChartLoaded
+    if(report_global_puntuation != undefined){
+      Object.keys(report_global_puntuation).forEach(key_name => {
+        this.get_total_count_metadata(key_name,report_global_puntuation);
+      });         
+      this.isLoaded = true
+      this.set_data()
+      this.set_chart()
+    }
+  }
 
     set_chart(){
       try{

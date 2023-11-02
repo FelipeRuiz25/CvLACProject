@@ -12,8 +12,8 @@
 </div>
 <div class=" logo_container">
   <div class=" logos">
-    <div class="logo_container2"><img src="./assets/home_logo.png" class="logo"></div>
-    <div class="logo_container2"><img src="./assets/chart_logo..png" class="logo"></div>
-    <div class="logo_container2"><img src="./assets/about_logo.jpg" class="logo"></div>
+    <div class="logo_container2"><a [routerLink]="home_path" routerLinkActive="active"><img src="./assets/home_logo.png" class="logo"></a></div>
+    <div class="logo_container2"><a [routerLink]="stats_path" routerLinkActive="active"></a><img src="./assets/chart_logo..png" class="logo"></div>
+    <div class="logo_container2"><a [routerLink]="about_path" routerLinkActive="active"></a><img src="./assets/about_logo.jpg" class="logo"></div>
   </div>
 </div>
